@@ -1,3 +1,10 @@
+# RUN
+
+
+```shell
+> ./mvnw spring-boot:run
+```
+
 :spring_version: current
 :toc:
 :project_id: gs-rest-service
@@ -97,7 +104,7 @@ provide a plain old Java object with fields, constructors, and accessors for the
 
 [source,java]
 ----
-include::complete/src/main/java/com/example/restservice/Greeting.java[]
+include::src/main/java/com/example/restservice/Greeting.java[]
 ----
 
 ====
@@ -117,7 +124,7 @@ for `/greeting` by returning a new instance of the `Greeting` class:
 ====
 [source,java]
 ----
-include::complete/src/main/java/com/example/restservice/GreetingController.java[]
+include::src/main/java/com/example/restservice/GreetingController.java[]
 ----
 ====
 
