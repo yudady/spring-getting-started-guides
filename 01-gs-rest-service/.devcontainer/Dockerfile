@@ -5,10 +5,10 @@ ARG VARIANT="bullseye"
 FROM mcr.microsoft.com/vscode/devcontainers/java:1-8-${VARIANT}
 
 # [Option] Install Maven
-ARG INSTALL_MAVEN="false"
+ARG INSTALL_MAVEN=""
 ARG MAVEN_VERSION=""
 # [Option] Install Gradle
-ARG INSTALL_GRADLE="false"
+ARG INSTALL_GRADLE=""
 ARG GRADLE_VERSION=""
 RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install maven \"${MAVEN_VERSION}\""; fi \
     && if [ "${INSTALL_GRADLE}" = "true" ]; then su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install gradle \"${GRADLE_VERSION}\""; fi
@@ -16,6 +16,8 @@ RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="lts/*"
 RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"; fi
+
+RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install java" 2>&1
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
