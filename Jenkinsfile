@@ -14,11 +14,10 @@ pipeline {
 						 ]
 						]
 				)
-			}
-			steps {
+
 				sh 'cd 01-gs-rest-service'
-			}
-			steps {
+
+
 				sh 'mvn --version'
 			}
 		}
