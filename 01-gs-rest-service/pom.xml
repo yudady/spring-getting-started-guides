@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>com.example</groupId>
-	<artifactId>rest-service-complete</artifactId>
+	<artifactId>01-gs-rest-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>01-rest-service-complete</name>
+	<name>01-gs-rest-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
