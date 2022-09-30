@@ -110,7 +110,7 @@ shows:
 ====
 [source,java]
 ----
-include::complete/src/main/java/com/example/messagingredis/Receiver.java[]
+include::src/main/java/com/example/messagingredis/Receiver.java[]
 ----
 ====
 
@@ -144,7 +144,7 @@ and the Redis template, as the following example (from
 ====
 [source,java]
 ----
-include::complete/src/main/java/com/example/messagingredis/MessagingRedisApplication.java[]
+include::src/main/java/com/example/messagingredis/MessagingRedisApplication.java[]
 ----
 ====
 
