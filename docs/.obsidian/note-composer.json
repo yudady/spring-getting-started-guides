@@ -1,0 +1,5 @@
+{
+  "askBeforeMerging": true,
+  "template": "800-template/HQA-templater",
+  "replacementText": "embed"
+}

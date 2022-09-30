@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "0fa9ae663bd13929",
+    "type": "split",
+    "children": [
+      {
+        "id": "1bbc2bc4431cfda7",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": true
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c0919f4f8da95291",
+    "type": "split",
+    "children": [
+      {
+        "id": "4dcc60248d2e3363",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b1ae197fff4bfdd1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "81ab66aee8069bec",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "fid",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b81cc67b87695036",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 224
+  },
+  "right": {
+    "id": "17640f5fc7202c27",
+    "type": "split",
+    "children": [
+      {
+        "id": "3fecf2d96e0dab36",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b79938fe658765c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "4ff6fa7e97ba7269",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "a23e15e9bd038082",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "alphabetical",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6537a3e867a6ff55",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md"
+              }
+            }
+          },
+          {
+            "id": "bed7c2c835bc9736",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "78e3fecbef45c937",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91b3678e71ee2f83",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md",
+                "options": {
+                  "collapse-filter": false,
+                  "search": "",
+                  "localJumps": 5,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": false,
+                  "centerStrength": 0.49711681547619,
+                  "repelStrength": 11.7280505952381,
+                  "linkStrength": 1,
+                  "linkDistance": 237,
+                  "scale": 0.6372987299011715,
+                  "close": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 322,
+    "collapsed": true
+  },
+  "active": "1bbc2bc4431cfda7",
+  "lastOpenFiles": [
+    "hidden-folder/hypothes/GitHub - weichenwobsidian-hypothesis-plugin An Obsidian.md plugin that syncs highlights from Hypothesis.md",
+    "001-TODO/免费域名.md",
+    "index.md",
+    "800-template/HQA-templater.md",
+    "800-template/bug-issue-tracking-templater.md",
+    "800-template/關鍵20小時-templater.md",
+    "300-閱讀筆記/黃金 20 小時學習法的 4 步驟.md",
+    "300-閱讀筆記/ccccccccccccc.md",
+    "未命名.md",
+    "001-TODO/cccccccccccc.md"
+  ]
+}
