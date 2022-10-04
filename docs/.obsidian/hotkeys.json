@@ -24,16 +24,13 @@
   "app:open-settings": [],
   "file-explorer:new-file": [],
   "workspace:edit-file-title": [],
-  "workspace:close": [],
   "graph:open": [],
   "note-refactor-obsidian:app:extract-selection-content-only": [],
   "note-refactor-obsidian:app:extract-selection-first-line": [],
-  "templater-obsidian:create-new-note-from-template": [],
   "templater-obsidian:jump-to-next-cursor-location": [],
   "templater-obsidian:replace-in-file-templater": [],
   "obsidian-icons-plugin:open-icons-plugin-modal": [],
   "editor:toggle-italics": [],
-  "editor:toggle-bold": [],
   "editor:open-link-in-new-leaf": [],
   "quickadd:runQuickAdd": [
     {
@@ -45,21 +42,12 @@
   ],
   "templater-obsidian:800-template/templater/001-metadata.md": [],
   "templater-obsidian:800-template/templater/002--buttons-blue.md": [],
-  "homepage:open-homepage": [
-    {
-      "modifiers": [
-        "Mod",
-        "Shift"
-      ],
-      "key": "H"
-    }
-  ],
   "templater-obsidian:insert-templater": [
     {
       "modifiers": [
         "Mod"
       ],
-      "key": "I"
+      "key": "J"
     }
   ],
   "editor:delete-paragraph": [
@@ -81,5 +69,40 @@
     }
   ],
   "obsidian-excalidraw-plugin:insert-link-to-element": [],
-  "obsidian-excalidraw-plugin:save": []
+  "obsidian-excalidraw-plugin:save": [],
+  "templater-obsidian:templates": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "J"
+    }
+  ],
+  "templater-obsidian:create-new-note-from-template": [],
+  "homepage:open-homepage": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "H"
+    }
+  ],
+  "editor:toggle-checklist-status": [],
+  "editor:cycle-list-checklist": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Enter"
+    }
+  ],
+  "workspace:toggle-pin": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "P"
+    }
+  ]
 }

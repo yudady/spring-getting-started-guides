@@ -1,6 +1,5 @@
 [
   "obsidian-icons-plugin",
-  "obsidian-admonition",
   "cm-editor-syntax-highlight-obsidian",
   "obsidian-title-index",
   "recent-files-obsidian",
@@ -13,6 +12,10 @@
   "obsidian42-brat",
   "obsidian-excalidraw-plugin",
   "quickadd",
-  "templater-obsidian",
-  "obsidian-hypothesis-plugin"
+  "obsidian-hypothesis-plugin",
+  "oz-clear-unused-images",
+  "homepage",
+  "dataview",
+  "calendar",
+  "templater-obsidian"
 ]

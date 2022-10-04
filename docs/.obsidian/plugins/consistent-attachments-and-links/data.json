@@ -7,12 +7,16 @@
   "changeNoteBacklinksAlt": true,
   "ignoreFolders": [
     ".git/",
-    ".obsidian/"
+    ".obsidian/",
+    "002-Capture/",
+    "templates/",
+    "hidden-folder/",
+    "Excalidraw/"
   ],
   "ignoreFiles": [
     "consistant-report.md"
   ],
-  "attachmentsSubfolder": "../images",
+  "attachmentsSubfolder": "images",
   "consistentReportFile": "consistant-report.md",
   "useBuiltInObsidianLinkCaching": false
 }

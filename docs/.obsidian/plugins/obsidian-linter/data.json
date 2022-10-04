@@ -171,9 +171,8 @@
   "displayChanged": false,
   "foldersToIgnore": [
     "002-Capture",
-    "800-template",
-    "hidden-folder",
-    "Excalidraw"
+    "templates",
+    "hidden-folder"
   ],
   "linterLocale": "system-default",
   "logLevel": 4,

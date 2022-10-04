@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "defaultNote": "obsidian/020-筆記/Home",
+  "defaultNote": "index",
+  "useMoment": false,
+  "momentFormat": "YYYY-MM-DD",
   "workspace": "Home",
   "workspaceEnabled": true,
   "hasRibbonIcon": true,
   "openMode": "Replace all open notes",
-  "view": "Default view"
+  "view": "Default view",
+  "refreshDataview": false
 }

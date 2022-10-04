@@ -1,6 +1,6 @@
 {
   "legacyEditor": false,
-  "livePreview": false,
+  "livePreview": true,
   "strictLineBreaks": true,
   "foldHeading": true,
   "showFrontmatter": true,
@@ -13,9 +13,10 @@
   "showUnsupportedFiles": true,
   "alwaysUpdateLinks": true,
   "tabSize": 2,
-  "spellcheck": false,
-  "readableLineLength": true,
+  "spellcheck": true,
+  "readableLineLength": false,
   "spellcheckLanguages": null,
-  "useMarkdownLinks": true,
-  "newLinkFormat": "relative"
+  "useMarkdownLinks": false,
+  "newLinkFormat": "relative",
+  "defaultViewMode": "source"
 }

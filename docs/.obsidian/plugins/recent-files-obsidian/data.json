@@ -1,72 +1,104 @@
 {
   "recentFiles": [
     {
-      "basename": "VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭",
-      "path": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md"
+      "basename": "HQA-templater",
+      "path": "templates/HQA-templater.md"
     },
     {
-      "basename": "免费域名",
-      "path": "001-TODO/免费域名.md"
+      "basename": "TODO",
+      "path": "templates/TODO.md"
     },
     {
       "basename": "index",
       "path": "index.md"
     },
     {
-      "basename": "HQA-templater",
-      "path": "800-template/HQA-templater.md"
+      "basename": "java-Jigsaw",
+      "path": "001-TODO/java-Jigsaw.md"
+    },
+    {
+      "basename": "The-First-20-Hours",
+      "path": "300-閱讀筆記/The-First-20-Hours.md"
+    },
+    {
+      "basename": "000-MOC-devops",
+      "path": "400-devops/000-MOC-devops.md"
+    },
+    {
+      "basename": "vscode-devcontainer",
+      "path": "400-devops/vscode-devcontainer.md"
+    },
+    {
+      "basename": "000-MOC-tools",
+      "path": "windows/000-MOC-tools.md"
+    },
+    {
+      "basename": "free-domain",
+      "path": "400-devops/free-domain.md"
+    },
+    {
+      "basename": "github-action",
+      "path": "400-devops/github-action.md"
+    },
+    {
+      "basename": "tools-templater",
+      "path": "templates/quick-add/tools-templater.md"
+    },
+    {
+      "basename": "ngrok",
+      "path": "400-devops/ngrok.md"
+    },
+    {
+      "basename": "Post",
+      "path": "templates/ignore-templates/Post.md"
+    },
+    {
+      "basename": "People",
+      "path": "templates/ignore-templates/People.md"
+    },
+    {
+      "basename": "Paper",
+      "path": "templates/ignore-templates/Paper.md"
+    },
+    {
+      "basename": "Note extraction",
+      "path": "templates/ignore-templates/Note extraction.md"
+    },
+    {
+      "basename": "Month Tag",
+      "path": "templates/ignore-templates/Month Tag.md"
+    },
+    {
+      "basename": "Note",
+      "path": "templates/ignore-templates/Note.md"
+    },
+    {
+      "basename": "Library",
+      "path": "templates/ignore-templates/Library.md"
+    },
+    {
+      "basename": "Lecture",
+      "path": "templates/ignore-templates/Lecture.md"
+    },
+    {
+      "basename": "Course",
+      "path": "templates/ignore-templates/Course.md"
+    },
+    {
+      "basename": "Company",
+      "path": "templates/ignore-templates/Company.md"
     },
     {
       "basename": "bug-issue-tracking-templater",
-      "path": "800-template/bug-issue-tracking-templater.md"
+      "path": "templates/ignore-templates/bug-issue-tracking-templater.md"
     },
     {
-      "basename": "關鍵20小時-templater",
-      "path": "800-template/關鍵20小時-templater.md"
+      "basename": "Book",
+      "path": "templates/ignore-templates/Book.md"
     },
     {
-      "basename": "黃金 20 小時學習法的 4 步驟",
-      "path": "300-閱讀筆記/黃金 20 小時學習法的 4 步驟.md"
-    },
-    {
-      "basename": "templater",
-      "path": "200-學習OB/templater.md"
-    },
-    {
-      "basename": "mermaid",
-      "path": "200-學習OB/mermaid.md"
-    },
-    {
-      "basename": "ob-資料分類方法",
-      "path": "200-學習OB/ob-資料分類方法.md"
-    },
-    {
-      "basename": "obsidian",
-      "path": "200-學習OB/obsidian.md"
-    },
-    {
-      "basename": "quick-add",
-      "path": "200-學習OB/quick-add.md"
-    },
-    {
-      "basename": "靈感",
-      "path": "002-Capture/靈感.md"
-    },
-    {
-      "basename": "docker-desktop-k8s-startup-fail",
-      "path": "100-InBox/docker-desktop-k8s-startup-fail.md"
-    },
-    {
-      "basename": "admonition",
-      "path": "200-學習OB/admonition.md"
-    },
-    {
-      "basename": "buttons",
-      "path": "200-學習OB/buttons.md"
-    },
-    {
-      "basename": "install-wslg",
-      "path": "windows/install-wslg.md"
+      "basename": "Blog Note",
+      "path": "templates/ignore-templates/Blog Note.md"
     },
     {
       "basename": "install-multiple-Ubuntu-WSL2",
@@ -77,16 +109,88 @@
       "path": "windows/wsl-command.md"
     },
     {
-      "basename": "Drawing 2022-09-29 17.40.17.excalidraw",
-      "path": "Excalidraw/Drawing 2022-09-29 17.40.17.excalidraw.md"
+      "basename": "now",
+      "path": "templates/templater-of-insert/now.md"
     },
     {
-      "basename": "vscode-devcontainer",
-      "path": "001-TODO/vscode-devcontainer.md"
+      "basename": "docker-desktop-k8s-startup-fail",
+      "path": "100-InBox/docker-desktop-k8s-startup-fail.md"
     },
     {
-      "basename": "github-action",
-      "path": "001-TODO/github-action.md"
+      "basename": "split-lines",
+      "path": "templates/templater-of-insert/split-lines.md"
+    },
+    {
+      "basename": "TabCopy",
+      "path": "200-學習OB/plugin/TabCopy.md"
+    },
+    {
+      "basename": "尚矽谷-SpringBoot2核心技術",
+      "path": "300-閱讀筆記/尚矽谷-SpringBoot2核心技術.md"
+    },
+    {
+      "basename": "筆記法",
+      "path": "300-閱讀筆記/筆記法.md"
+    },
+    {
+      "basename": "README-templates-folder",
+      "path": "300-閱讀筆記/README-templates-folder.md"
+    },
+    {
+      "basename": "Drawing-20221003-105440.excalidraw",
+      "path": "hidden-folder/Excalidraw/Drawing-20221003-105440.excalidraw.md"
+    },
+    {
+      "basename": "admonition",
+      "path": "200-學習OB/plugin/admonition.md"
+    },
+    {
+      "basename": "todo",
+      "path": "templates/todo.md"
+    },
+    {
+      "basename": "000-obsidian",
+      "path": "200-學習OB/000-obsidian.md"
+    },
+    {
+      "basename": "README-templates-folder",
+      "path": "hidden-folder/README-templates-folder.md"
+    },
+    {
+      "basename": "quick-add",
+      "path": "200-學習OB/plugin/quick-add.md"
+    },
+    {
+      "basename": "test-templater",
+      "path": "001-TODO/test-templater.md"
+    },
+    {
+      "basename": "Roam-Highlighter",
+      "path": "200-學習OB/plugin/Roam-Highlighter.md"
+    },
+    {
+      "basename": "templater",
+      "path": "200-學習OB/plugin/templater.md"
+    },
+    {
+      "basename": "Homepage",
+      "path": "200-學習OB/plugin/Homepage.md"
+    },
+    {
+      "basename": "buttons",
+      "path": "200-學習OB/plugin/buttons.md"
+    },
+    {
+      "basename": "Home",
+      "path": "obsidian/020-筆記/Home.md"
+    },
+    {
+      "basename": "VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭",
+      "path": "hidden-folder/hypothes/VMware-Workstation-Pro-REST-API  Tommy-好記性不如爛筆頭.md"
+    },
+    {
+      "basename": "install-wslg",
+      "path": "windows/install-wslg.md"
     },
     {
       "basename": "github",
@@ -95,110 +199,6 @@
     {
       "basename": "free-resource",
       "path": "tools/free-resource/free-resource.md"
-    },
-    {
-      "basename": "000-MOC-security",
-      "path": "tools/security/000-MOC-security.md"
-    },
-    {
-      "basename": "java-security-JCA-JCE",
-      "path": "tools/security/java-security-JCA-JCE.md"
-    },
-    {
-      "basename": "000-MOC-windows",
-      "path": "tools/windows/000-MOC-windows.md"
-    },
-    {
-      "basename": "000-MOC-tools",
-      "path": "tools/000-MOC-tools.md"
-    },
-    {
-      "basename": "Fiddler-Classic",
-      "path": "tools/mobile/Fiddler-Classic.md"
-    },
-    {
-      "basename": "Genymotion",
-      "path": "tools/mobile/Genymotion.md"
-    },
-    {
-      "basename": "browerHotReload",
-      "path": "tools/browerHotReload.md"
-    },
-    {
-      "basename": "openssl",
-      "path": "tools/security/openssl.md"
-    },
-    {
-      "basename": "CA",
-      "path": "tools/security/CA.md"
-    },
-    {
-      "basename": "security-file-extension-name",
-      "path": "tools/security/security-file-extension-name.md"
-    },
-    {
-      "basename": "certificate",
-      "path": "tools/security/certificate.md"
-    },
-    {
-      "basename": "Strict-Transport-Security",
-      "path": "tools/security/Strict-Transport-Security.md"
-    },
-    {
-      "basename": "000-MOC-chrome",
-      "path": "tools/chrome/000-MOC-chrome.md"
-    },
-    {
-      "basename": "intellij-settings",
-      "path": "tools/intellij/intellij-settings.md"
-    },
-    {
-      "basename": "frontend-test-tools",
-      "path": "tools/frontend-test-tools.md"
-    },
-    {
-      "basename": "index",
-      "path": "tools/intellij/index.md"
-    },
-    {
-      "basename": "intellij-note-formater",
-      "path": "tools/intellij/intellij-note-formater.md"
-    },
-    {
-      "basename": "bilibili-download",
-      "path": "tools/bilibili-download/bilibili-download.md"
-    },
-    {
-      "basename": "index",
-      "path": "devops/index.md"
-    },
-    {
-      "basename": "index",
-      "path": "devops/automatic/index.md"
-    },
-    {
-      "basename": "index",
-      "path": "devops/docker/index.md"
-    },
-    {
-      "basename": "docker",
-      "path": "devops/docker/docker.md"
-    },
-    {
-      "basename": "chromeDriver",
-      "path": "devops/automatic/chromeDriver.md"
-    },
-    {
-      "basename": "docker-mysql",
-      "path": "devops/docker/docker-mysql.md"
-    },
-    {
-      "basename": "docker-bridge",
-      "path": "devops/docker/docker-bridge.md"
-    },
-    {
-      "basename": "vuepress-init",
-      "path": "blog/vuepress-blog/vuepress-init.md"
     }
   ],
   "omittedPaths": [

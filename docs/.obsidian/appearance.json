@@ -1,6 +1,9 @@
 {
-  "baseFontSize": 18,
+  "baseFontSize": 23,
   "theme": "moonstone",
-  "cssTheme": "Higlighter",
-  "translucency": false
+  "cssTheme": "Typewriter",
+  "translucency": false,
+  "enabledCssSnippets": [
+    "t"
+  ]
 }

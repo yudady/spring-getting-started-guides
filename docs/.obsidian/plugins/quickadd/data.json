@@ -1,12 +1,40 @@
 {
   "choices": [
     {
+      "id": "2de7409f-dac6-447c-a834-0d5ca68b1a15",
+      "name": "0-👍todo-create-file",
+      "type": "Template",
+      "command": false,
+      "templatePath": "templates/todo.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "001-TODO"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false
+      },
+      "appendLink": false,
+      "incrementFileName": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default"
+    },
+    {
       "id": "4d0e3268-52ec-4436-9b59-15ac9f85084c",
-      "name": "0-🧠靈感",
+      "name": "0-🧠capture-ideas-todo-list",
       "type": "Capture",
       "command": false,
       "appendLink": false,
-      "captureTo": "002-Capture/靈感.md",
+      "captureTo": "index.md",
       "captureToActiveFile": false,
       "createFileIfItDoesntExist": {
         "enabled": false,
@@ -15,11 +43,11 @@
       },
       "format": {
         "enabled": true,
-        "format": "- {{VALUE}} @{{DATE:YYYYMMDDTHmmMSS}}\n"
+        "format": "- {{VALUE}} @{{DATE:YYYY-MM-DDTHH:mm:ss}}\n"
       },
       "insertAfter": {
         "enabled": true,
-        "after": "# 靈感",
+        "after": "## capture ideas",
         "insertAtEnd": false,
         "createIfNotFound": false,
         "createIfNotFoundLocation": "top"
@@ -39,7 +67,7 @@
       "name": "1-😍關鍵20小時",
       "type": "Template",
       "command": false,
-      "templatePath": "800-template/關鍵20小時-templater.md",
+      "templatePath": "templates/quick-add/20-hours-templater.md",
       "fileNameFormat": {
         "enabled": false,
         "format": ""
@@ -47,7 +75,35 @@
       "folder": {
         "enabled": true,
         "folders": [
-          "300-閱讀筆記"
+          "001-TODO"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false
+      },
+      "appendLink": false,
+      "incrementFileName": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": false
+      },
+      "openFile": true,
+      "openFileInMode": "default"
+    },
+    {
+      "id": "7165d0c5-3dfe-4465-b843-4722f96a9072",
+      "name": "create-tools",
+      "type": "Template",
+      "command": false,
+      "templatePath": "templates/quick-add/tools-templater.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "001-TODO"
         ],
         "chooseWhenCreatingNote": false,
         "createInSameFolderAsActiveFile": false
@@ -59,7 +115,7 @@
         "direction": "vertical",
         "focus": true
       },
-      "openFile": true,
+      "openFile": false,
       "openFileInMode": "default"
     },
     {
@@ -67,7 +123,7 @@
       "name": "🆘create-HQA-page",
       "type": "Template",
       "command": false,
-      "templatePath": "800-template/HQA-templater.md",
+      "templatePath": "templates/HQA-templater.md",
       "fileNameFormat": {
         "enabled": false,
         "format": ""
