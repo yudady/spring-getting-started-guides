@@ -3,7 +3,7 @@ title: Spring Boot Reference Documentation
 tags: []
 aliases: [Spring Boot Reference Documentation, springboot]
 created_date: 2022-10-05 11:25
-updated_date: 2022-10-05 11:31
+updated_date: 2022-10-05 16:21
 ---
 
 # Spring Boot Reference Documentation
@@ -20,9 +20,14 @@ updated_date: 2022-10-05 11:31
 - [ ] [Data](https://docs.spring.io/spring-boot/docs/current/reference/html/data.html#data) :SQL and NOSQL data access.
 - [ ] [IO](https://docs.spring.io/spring-boot/docs/current/reference/html/io.html#io) Caching, Quartz Scheduler, REST clients, Sending email, Spring Web Services, and more.
 - [ ] [Messaging](https://docs.spring.io/spring-boot/docs/current/reference/html/messaging.html#messaging) :JMS, AMQP, Apache Kafka, RSocket, WebSocket, and Spring Integration.
-- [ ] [Container Images](https://docs.spring.io/spring-boot/docs/current/reference/html/container-images.html#container-images) :Efficient container images and Building container images with Dockerfiles and Cloud Native Buildpacks.
-- [ ] [Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator) :Monitoring, Metrics, Auditing, and more.
+- [x] [Container Images](https://docs.spring.io/spring-boot/docs/current/reference/html/container-images.html#container-images) : build docker image , fat jar
+- [ ] [Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator) : 
+	- [ ] 監控 Monitoring, 
+	- [ ] Metrics, 
+	- [ ] Auditing, and more.
 - [ ] [Deploying Spring Boot Applications](https://docs.spring.io/spring-boot/docs/current/reference/html/deployment.html#deployment) :Deploying to the Cloud, and Installing as a Unix application.
+	- [ ] k8s : Kubernetes Container Lifecycle
+	- [ ] Heroku
 
 ## [“How-to” Guides](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto)
 
