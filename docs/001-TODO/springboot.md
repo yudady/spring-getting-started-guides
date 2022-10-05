@@ -1,18 +1,20 @@
 ---
-title: springboot
+title: Spring Boot Reference Documentation
 tags: []
-aliases: [springboot]
+aliases: [Spring Boot Reference Documentation, springboot]
 created_date: 2022-10-05 11:25
-updated_date: 2022-10-05 11:26
+updated_date: 2022-10-05 11:31
 ---
 
-# springboot
+# Spring Boot Reference Documentation
+
+- Link: [Spring REST Docs](https://spring.io/projects/spring-restdocs#samples)
 
 ## reading list
 
 - [x] [Documentation Overview](https://docs.spring.io/spring-boot/docs/current/reference/html/documentation.html#documentation) 總覽
-- [ ] [Getting Started](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started) : Introducing Spring Boot, System Requirements, Servlet Containers, Installing Spring Boot, and Developing Your First Spring Boot Application
-- [ ] [Using Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using) : Build Systems, Structuring Your Code, Configuration, Spring Beans and Dependency Injection, DevTools, and more.
+- [x] [Getting Started](https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started) : Introducing Spring Boot, System Requirements, Servlet Containers, Installing Spring Boot, and Developing Your First Spring Boot Application
+- [x] [Using Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using) : Build Systems, Structuring Your Code, Configuration, Spring Beans and Dependency Injection, DevTools, and more.
 - [ ] [Core Features](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features) :Profiles, Logging, Security, Caching, Spring Integration, Testing, and more.
 - [ ] [Web](https://docs.spring.io/spring-boot/docs/current/reference/html/web.html#web) :Servlet Web, Reactive Web, GraphQL, Embedded Container Support, Graceful Shutdown, and more.
 - [ ] [Data](https://docs.spring.io/spring-boot/docs/current/reference/html/data.html#data) :SQL and NOSQL data access.

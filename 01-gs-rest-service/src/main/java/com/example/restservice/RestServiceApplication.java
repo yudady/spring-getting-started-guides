@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RestServiceApplication {
 
     public static void main(String[] args) {
+
+//        org.springframework.boot.loader.JarLauncher
+
         SpringApplication.run(RestServiceApplication.class, args);
     }
 
