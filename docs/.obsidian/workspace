@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "fc42c57b2be98258",
+        "id": "cd76ca24f0ee9287",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "index.md",
+            "file": "001-TODO/test-templater.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -26,7 +26,6 @@
       {
         "id": "4dcc60248d2e3363",
         "type": "tabs",
-        "dimension": 66.50898770104068,
         "children": [
           {
             "id": "b1ae197fff4bfdd1",
@@ -42,36 +41,13 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "windows",
+                "query": "tag:#todo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               }
-            }
-          },
-          {
-            "id": "b2d28b9b73864b16",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
-        "id": "248f440010aa062a",
-        "type": "tabs",
-        "dimension": 33.49101229895932,
-        "children": [
-          {
-            "id": "b81cc67b87695036",
-            "type": "leaf",
-            "state": {
-              "type": "recent-files",
-              "state": {}
             }
           }
         ]
@@ -94,7 +70,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "001-TODO/test-templater.md"
               }
             }
           },
@@ -137,7 +113,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "index.md",
+                "file": "001-TODO/test-templater.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -172,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "001-TODO/test-templater.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -184,7 +160,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "001-TODO/test-templater.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -196,23 +172,23 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 267.5
+    "width": 247.5
   },
-  "active": "fc42c57b2be98258",
+  "active": "cd76ca24f0ee9287",
   "lastOpenFiles": [
-    "templates/templater-of-insert/now.md",
-    "templates/templater-of-insert/split-lines.md",
-    "templates/quick-add/tools-templater.md",
-    "templates/TODO.md",
-    "templates/HQA-templater.md",
-    "index.md",
-    "001-TODO/java-Jigsaw.md",
-    "ffffffffffffffffff.md",
-    "templates/20-hours-templater.md",
-    "300-閱讀筆記/The-First-20-Hours.md"
+    "001-TODO/2222222222222222.md",
+    "001-TODO/333333333.md",
+    "001-TODO/444444444444444444.md",
+    "001-TODO/3333333333333.md",
+    "001-TODO/1111111111111.md",
+    "001-TODO/vvvvvvvvvvvvvvvvv.md",
+    "templates/quick-add/todo-templater.md",
+    "templates/quick-add/HQA-templater.md",
+    "001-TODO/xxxxx.md",
+    "templates/quick-add/devops-templater.md"
   ]
 }
