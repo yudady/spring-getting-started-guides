@@ -3,7 +3,7 @@ title: Spring Boot Reference Documentation
 tags: []
 aliases: [Spring Boot Reference Documentation, springboot]
 created_date: 2022-10-05 11:25
-updated_date: 2022-10-06 15:14
+updated_date: 2022-10-06 17:47
 ---
 
 # Spring Boot Reference Documentation
@@ -49,8 +49,24 @@ updated_date: 2022-10-06 15:14
 ## [“How-to” Guides](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto)
 
 - [ ] [1. Spring Boot Application](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.application)
+	- FailureAnalyzer 用來分析啟動錯誤
+		- **org.springframework.boot.diagnostics.FailureAnalyzer**=com.example.ProjectConstraintViolationFailureAnalyzer
+		- If you need access to the `BeanFactory` or the `Environment`, your `FailureAnalyzer` can implement `BeanFactoryAware` or `EnvironmentAware` respectively.
+	- 經驗法則
+		- 查找調用的類 `*AutoConfiguration` 並閱讀它們的來源。請特別注意 `@Conditional*` 註釋以了解它們啟用了哪些功能以及何時啟用。
+		- 添加 --debug 到命令行或系統屬性 -Ddebug 以在控制台上獲取在您的應用程序中做出的所有自動配置決策的日誌。
+		- 在啟用了執行器的正在運行的應用程序中，查看 conditions 端點（/actuator/conditions 或 JMX 等效項）以獲取相同的信息。
+		- 查找類@ConfigurationProperties（例如 ServerProperties）並從那裡讀取可用的外部配置選項。
+		- @ConfigurationProperties 註釋有一個 name 作為外部屬性前綴的屬性。因此，ServerPropertieshasprefix="server" 及其配置屬性是 server.port、server.address 和其他。在啟用執行器的運行應用程序中，查看 configprops 端點。
+		- 尋找該 bind 方法的用途，以輕鬆的方式 Binder 顯式地將配置值拉出。Environment 它通常與前綴一起使用。
+		- 查找@Value 直接綁定到 Environment.
+		- 查找@ConditionalOnExpression 響應 SpEL 表達式打開和關閉功能的註釋，通常使用從 Environment.
 - [ ] [2. Properties and Configuration](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.properties-and-configuration)
+	- maven gradle 設定的屬性可以傳入 application.yaml 中
+	- 設定檔會全部合併
 - [ ] [3. Embedded Web Servers](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.webserver)
+	- Undertow
+	- response 壓縮設定
 - [ ] [4. Spring MVC](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.spring-mvc)
 - [ ] [5. Jersey](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.jersey)
 - [ ] [6. HTTP Clients](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.http-clients)
