@@ -1,18 +1,13 @@
 package com.atguigu.boot.config;
 
 
-import ch.qos.logback.core.db.DBHelper;
-import com.atguigu.boot.bean.Car;
 import com.atguigu.boot.bean.Pet;
 import com.atguigu.boot.bean.User;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.web.filter.CharacterEncodingFilter;
 
 
 /**
@@ -31,7 +26,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
  *
  */
 
-@Import({User.class, DBHelper.class})
+//@Import({User.class, DBHelper.class})
+@Import({User.class})
 @Configuration(proxyBeanMethods = false) //告诉SpringBoot这是一个配置类 == 配置文件
 //@ConditionalOnBean(name = "tom")
 @ConditionalOnMissingBean(name = "tom")
