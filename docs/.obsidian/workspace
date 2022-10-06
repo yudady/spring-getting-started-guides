@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "371b783aa70c13c2",
+        "id": "03a1a0bb797bda6f",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -176,19 +176,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 247.5
+    "width": 247.5,
+    "collapsed": true
   },
-  "active": "371b783aa70c13c2",
+  "active": "03a1a0bb797bda6f",
   "lastOpenFiles": [
+    "001-TODO/開發一個springboot流程.md",
+    "001-TODO/springboot.md",
+    "001-TODO/spring-boot-reference.pdf",
     "001-TODO/spring.md",
     "index.md",
-    "001-TODO/springboot.md",
+    "001-TODO/sagan.md",
     "001-TODO/2222222222222222.md",
     "001-TODO/333333333.md",
     "001-TODO/444444444444444444.md",
-    "001-TODO/3333333333333.md",
-    "001-TODO/1111111111111.md",
-    "001-TODO/vvvvvvvvvvvvvvvvv.md",
-    "templates/quick-add/todo-templater.md"
+    "001-TODO/3333333333333.md"
   ]
 }

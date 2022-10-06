@@ -1,6 +1,6 @@
 ---
 created_date: 2022-10-04 17:34
-updated_date: 2022-10-05 11:28
+updated_date: 2022-10-06 10:09
 title: index
 tags: []
 date: 2022-10-04 13:43
@@ -13,6 +13,8 @@ aliases: [index]
 ## reading list
 
 - [ ] [[001-TODO/spring]]
+- [ ] [[001-TODO/springboot]] : 進行中
+- [ ] [[001-TODO/sagan]] : a springboot demo 
 
 ---
 
