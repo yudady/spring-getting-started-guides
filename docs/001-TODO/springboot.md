@@ -35,7 +35,26 @@ updated_date: 2022-10-06 17:47
 	- web security
 	- web sesion
 - [ ] [Data](https://docs.spring.io/spring-boot/docs/current/reference/html/data.html#data) :SQL and NOSQL data access.
+	- jpa
+	- jdbc
+	- jooq
+	- r2dbc
+	- redis
+	- mongodb
+	- neo4j
+	- elasicsearch
+	- couchbase
+	- ldap
+	- infucdb
 - [ ] [IO](https://docs.spring.io/spring-boot/docs/current/reference/html/io.html#io) Caching, Quartz Scheduler, REST clients, Sending email, Spring Web Services, and more.
+	- cache provider
+		- generic : `CacheManager` : org.springframework.cache.Cache
+		- jcache : `JCacheCacheManager` : spring.cache.jcache.provider
+		- quartz
+		- email
+		- restTemplate
+		- webClient
+		- JTA
 - [ ] [Messaging](https://docs.spring.io/spring-boot/docs/current/reference/html/messaging.html#messaging) :JMS, AMQP, Apache Kafka, RSocket, WebSocket, and Spring Integration.
 - [x] [Container Images](https://docs.spring.io/spring-boot/docs/current/reference/html/container-images.html#container-images) : build docker image , fat jar
 - [ ] [Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator) : 

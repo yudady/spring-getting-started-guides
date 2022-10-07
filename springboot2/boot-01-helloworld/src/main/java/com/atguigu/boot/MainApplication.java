@@ -1,17 +1,18 @@
 package com.atguigu.boot;
 
 
-import org.springframework.boot.SpringApplication;
+import com.atguigu.boot.bean.JsonProperties;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cache.interceptor.CacheAspectSupport;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 主程序类;主配置类
+ *
  * @SpringBootApplication：这是一个SpringBoot应用
  */
 
@@ -22,9 +23,16 @@ import org.springframework.context.annotation.ComponentScan;
 public class MainApplication {
 
 
+
     public static void main(String[] args) {
+
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(MainApplication.class);
+        builder.lazyInitialization(true);
+        ConfigurableApplicationContext run = builder.run(args);
+
         //1、返回我们IOC容器
-        ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
+//        ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
+
 
         //2、查看容器里面的组件
         String[] names = run.getBeanDefinitionNames();
@@ -78,19 +86,25 @@ public class MainApplication {
 //        System.out.println(bean1);
 
         boolean tom = run.containsBean("tom");
-        System.out.println("容器中Tom组件："+tom);
+        System.out.println("容器中Tom组件：" + tom);
 
         boolean user01 = run.containsBean("user01");
-        System.out.println("容器中user01组件："+user01);
+        System.out.println("容器中user01组件：" + user01);
 
         boolean tom22 = run.containsBean("tom22");
-        System.out.println("容器中tom22组件："+tom22);
+        System.out.println("容器中tom22组件：" + tom22);
 
 
         boolean haha = run.containsBean("haha");
         boolean hehe = run.containsBean("hehe");
-        System.out.println("haha："+haha);
-        System.out.println("hehe："+hehe);
+        System.out.println("haha：" + haha);
+        System.out.println("hehe：" + hehe);
+
+
+        int beanDefinitionCount2 = run.getBeanDefinitionNames().length;
+        System.out.println(beanDefinitionCount2);
+
+        System.out.println("JsonProperties.name = " + run.getBean(JsonProperties.class).name);
 
     }
 }
