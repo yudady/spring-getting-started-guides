@@ -12,5 +12,3 @@
 ## git-branch
 * spring
 * springboot
-
-## pr
