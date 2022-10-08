@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
@@ -15,12 +16,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 //@PropertySource(value = "classpath:data.json")
-//@ConfigurationProperties(prefix = "my")
+@ConfigurationProperties(prefix = "my")
 
-@PropertySource(value = {"classpath:data.json"}, factory = JsonPropertySourceFactory.class)
+//@PropertySource(value = {"classpath:data.json"}, factory = JsonPropertySourceFactory.class)
 public class JsonProperties {
 
-    @Value("my.name")
+    @Value("${my.name}")
     public String name;
 
 

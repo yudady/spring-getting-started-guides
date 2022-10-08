@@ -104,7 +104,7 @@ public class MainApplication {
 //        int beanDefinitionCount2 = run.getBeanDefinitionNames().length;
 //        System.out.println(beanDefinitionCount2);
 //
-//        System.out.println("JsonProperties.name = " + run.getBean(JsonProperties.class).name);
+        System.out.println("JsonProperties.name = " + run.getBean(JsonProperties.class).name);
 
     }
 }
