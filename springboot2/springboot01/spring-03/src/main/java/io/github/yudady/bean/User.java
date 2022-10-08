@@ -4,20 +4,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
 @Data
 @ToString
 @EqualsAndHashCode
-//@Configuration(proxyBeanMethods = true)
-//@ConfigurationProperties(prefix = "my")
-@ConfigurationProperties("my")
+@Configuration(proxyBeanMethods = true)
 public class User {
 
-	//	@Value("${my.name}")
+	@Value("${my.name}")
 	public String name;
 
-	//	@Value("${my.age}")
+	@Value("${my.age}")
 	public Integer age;
 
 }

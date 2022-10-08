@@ -16,7 +16,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @Slf4j
 @SpringBootApplication
-@EnableConfigurationProperties(User.class)
 public class App implements CommandLineRunner {
 
 	@Autowired
