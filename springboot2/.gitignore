@@ -8,3 +8,7 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+
+
+## 排除忽略
+!**/wrapper/gradle-wrapper.jar
