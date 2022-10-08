@@ -10,11 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @Slf4j
 @SpringBootApplication
+@EnableConfigurationProperties(User.class)
 public class App implements CommandLineRunner {
 
 	@Autowired
@@ -22,7 +24,12 @@ public class App implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		User user = context.getBean(User.class); log.info("[LOG] user : {}", user);
+		String[] beanNamesForType = context.getBeanNamesForType(User.class);
+		Arrays.stream(beanNamesForType).forEach(beanName -> {
+			User bean = context.getBean(beanName, User.class);
+			log.info("[LOG] user : {} , {}", beanName, bean);
+		});
+
 	}
 
 	public static void main(String[] args) {
