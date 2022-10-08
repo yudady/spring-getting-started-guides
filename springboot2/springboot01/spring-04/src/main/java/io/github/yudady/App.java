@@ -12,14 +12,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.env.Environment;
 
 @Slf4j
 @SpringBootApplication
+@EnableConfigurationProperties(User.class)
 public class App implements CommandLineRunner {
 
 	@Autowired
 	ApplicationContext context;
+	@Autowired
+	Environment e;
 
 	@Override
 	public void run(String... args) {
@@ -29,10 +32,11 @@ public class App implements CommandLineRunner {
 			log.info("[LOG] user : {} , {}", beanName, bean);
 		});
 
+		System.out.println("===================================");
+		Arrays.stream(e.getActiveProfiles()).forEach(System.out::println);
 	}
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext run = SpringApplication.run(App.class, args);
-		// Arrays.stream(run.getBeanDefinitionNames()).forEach(log::info);
+		System.exit(SpringApplication.exit(SpringApplication.run(App.class, args)));
 	}
 }
