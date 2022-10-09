@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ImportResource;
 
 
 /**
- * 1、配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的
+ * 1、配置类@Configuration,里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的
  * 2、配置类本身也是组件
  * 3、proxyBeanMethods：代理bean的方法
  *      Full(proxyBeanMethods = true)、【保证每个@Bean方法被调用多少次返回的组件都是单实例的】
