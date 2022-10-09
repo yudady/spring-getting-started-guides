@@ -1,12 +1,9 @@
 package com.atguigu.boot;
 
 
-import com.atguigu.boot.bean.JsonProperties;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cache.interceptor.CacheAspectSupport;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -23,14 +20,13 @@ import org.springframework.context.annotation.ComponentScan;
 public class MainApplication {
 
 
+	public static void main(String[] args) {
 
-    public static void main(String[] args) {
+		SpringApplicationBuilder builder = new SpringApplicationBuilder(MainApplication.class);
+		builder.lazyInitialization(true);
+		ConfigurableApplicationContext run = builder.run(args);
 
-        SpringApplicationBuilder builder = new SpringApplicationBuilder(MainApplication.class);
-        builder.lazyInitialization(true);
-        ConfigurableApplicationContext run = builder.run(args);
-
-        //1、返回我们IOC容器
+		//1、返回我们IOC容器
 //        ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
 
 
@@ -104,7 +100,6 @@ public class MainApplication {
 //        int beanDefinitionCount2 = run.getBeanDefinitionNames().length;
 //        System.out.println(beanDefinitionCount2);
 //
-        System.out.println("JsonProperties.name = " + run.getBean(JsonProperties.class).name);
 
-    }
+	}
 }
