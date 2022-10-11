@@ -1,16 +1,4 @@
-//pluginManagement {
-//    plugins {
-//        id 'java'
-//        id 'org.springframework.boot' version '2.7.4'
-//        id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-//    }
-//    resolutionStrategy {
-//    }
-//    repositories {
-//    }
-//}
-//
-//rootProject.name = 'springboot-environment'
+rootProject.name = 'springboot-environment'
 
 include('001-start')
 include('spring-02')

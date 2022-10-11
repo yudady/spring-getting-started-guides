@@ -1,25 +1,28 @@
 plugins {
 	id "java"
+
 }
 
 
 subprojects {
 	buildscript {
 		repositories {
-			mavenLocal()
-			mavenCentral()
+			maven {
+				url "https://plugins.gradle.org/m2/"
+			}
 		}
-//		dependencies {
-//			classpath "org.springframework.boot:2.7.4"
-//			classpath "io.spring.dependency-management:1.0.11.RELEASE"
-//		}
+		dependencies {
+			classpath "io.spring.gradle:dependency-management-plugin:1.0.14.RELEASE"
+		}
 	}
+
 	repositories {
 		mavenLocal()
 		mavenCentral()
 	}
 
 	apply plugin: "java"
+//	apply plugin: 'io.spring.dependency-management'
 //	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 //	apply plugin: "io.spring.dependency-management:1.0.11.RELEASE"
 
