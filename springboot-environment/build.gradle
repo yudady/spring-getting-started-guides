@@ -1,15 +1,29 @@
-//plugins {
-//	id 'java'
-//	id 'org.springframework.boot' version '2.7.4'
+plugins {
+	id "java"
+}
+
+
+subprojects {
+	buildscript {
+		repositories {
+			mavenLocal()
+			mavenCentral()
+		}
+//		dependencies {
+//			classpath "org.springframework.boot:2.7.4"
+//			classpath "io.spring.dependency-management:1.0.11.RELEASE"
+//		}
+	}
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+
+	apply plugin: "java"
 //	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-//}
-//
-//repositories {
-//	mavenLocal()
-//	maven {
-//		url = uri('https://repo.maven.apache.org/maven2/')
-//	}
-//}
+//	apply plugin: "io.spring.dependency-management:1.0.11.RELEASE"
+
+}
 
 tasks.withType(JavaCompile) {
 	options.encoding = 'UTF-8'
