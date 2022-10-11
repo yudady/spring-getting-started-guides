@@ -1,7 +1,10 @@
 plugins {
 	id "java"
-
+	id 'maven-publish'
+	id 'org.springframework.boot' version '2.7.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
+
 
 
 subprojects {
@@ -22,10 +25,26 @@ subprojects {
 	}
 
 	apply plugin: "java"
-//	apply plugin: 'io.spring.dependency-management'
-//	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-//	apply plugin: "io.spring.dependency-management:1.0.11.RELEASE"
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
 
+}
+
+publishing {
+	publications {
+		maven2LocalRepo(MavenPublication) {
+			group 'io.yudady.github.springboot'
+			version '0.0.1'
+
+			from components.java
+		}
+	}
+
+	repositories {
+		maven {
+			url = "file:///d:/tommy/github-repo/yudady/maven2"
+		}
+	}
 }
 
 tasks.withType(JavaCompile) {
