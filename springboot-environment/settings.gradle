@@ -1,6 +1,6 @@
 rootProject.name = 'springboot-environment'
 
-include('spring-01')
+include('001-start')
 include('spring-02')
 include('spring-03')
 
