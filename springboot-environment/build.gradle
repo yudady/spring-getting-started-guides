@@ -5,7 +5,8 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
-
+group 'io.yudady.github.springboot'
+version '0.0.1'
 
 subprojects {
 	buildscript {
@@ -25,28 +26,41 @@ subprojects {
 	}
 
 	apply plugin: "java"
+	apply plugin: 'maven-publish'
 	apply plugin: 'org.springframework.boot'
 	apply plugin: 'io.spring.dependency-management'
 
-}
 
-publishing {
-	publications {
-		maven2LocalRepo(MavenPublication) {
-			group 'io.yudady.github.springboot'
-			version '0.0.1'
-
-			from components.java
-		}
+	java {
+		withJavadocJar()
+		withSourcesJar()
 	}
 
-	repositories {
-		maven {
-			url = "file:///d:/tommy/github-repo/yudady/maven2"
-		}
-	}
-}
+// FIXME
+//	publishing {
+//		publications {
+//			maven2LocalRepo(MavenPublication) {
+//				group 'io.yudady.github.springboot'
+//				artifactId = project.name
+//				version '0.0.1'
+//
+//				from components.java
+//			}
+//		}
+//
+//		repositories {
+//			maven {
+////				url = "file:///d:/tommy/github-repo/yudady/maven2"
+//				url = "file:///c:/z"
+//			}
+//		}
+//	}
 
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
+
+
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+	}
+
+
 }
