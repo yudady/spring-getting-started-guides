@@ -1,0 +1,16 @@
+//plugins {
+//	id 'java'
+//	id 'org.springframework.boot' version '2.7.4'
+//	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+//}
+//
+//repositories {
+//	mavenLocal()
+//	maven {
+//		url = uri('https://repo.maven.apache.org/maven2/')
+//	}
+//}
+
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
