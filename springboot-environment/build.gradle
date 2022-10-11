@@ -38,21 +38,23 @@ subprojects {
 		withSourcesJar()
 	}
 
-	// FIXME this publishing fail
+
 	publishing {
 		publications {
-			maven2LocalRepo(MavenPublication) {
+			// bootJar is the default build task configured by Spring Boot
+			mavenJava(MavenPublication) {
 				group 'io.yudady.github.springboot'
 				artifactId = project.name
-				version = '0.0.1-SNAPSHOT'
-
-				from components.java
+				version '0.0.1'
+				// bootJar is the default build task configured by Spring Boot
+				artifact bootJar
 			}
 		}
 
 		repositories {
 			maven {
 				url = "file:///d:/tommy/github-repo/yudady/maven2"
+//				url = "file:///d:/tommy/github-repo/yudady-source/repo/maven2"
 			}
 		}
 	}
