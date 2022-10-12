@@ -1,4 +1,4 @@
-### down-load-csv
+### download-csv
 GET http://localhost:8080/export-employees
 
 ###
