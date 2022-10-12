@@ -1,8 +1,8 @@
 rootProject.name = 'springboot-io'
 
-//include('io-01-start')
-//include 'io-02-opencsv'
-//include 'io-03-export-opencsv'
-//include 'io-04-export-apache-csv'
-//include 'io-05-export-pdf'
+include('io-01-start')
+include 'io-02-opencsv'
+include 'io-03-export-opencsv'
+include 'io-04-export-apache-csv'
+include 'io-05-export-pdf'
 include 'io-06-export-word'
