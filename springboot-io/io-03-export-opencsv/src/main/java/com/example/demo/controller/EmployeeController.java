@@ -19,7 +19,7 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 
-	@GetMapping("/export-employees")
+	@GetMapping({"/", "/export-employees"})
 	public void exportCSV(HttpServletResponse response) throws Exception {
 
 		// set file name and content type
