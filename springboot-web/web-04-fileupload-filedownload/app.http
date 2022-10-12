@@ -1,0 +1,15 @@
+###
+GET http://localhost:8080
+
+###
+GET http://localhost:8080/cache-manager-name
+
+###
+GET http://localhost:8080/student/1
+
+###
+GET http://localhost:8080/student/2
+
+###
+GET http://localhost:8080/student/3
+###
