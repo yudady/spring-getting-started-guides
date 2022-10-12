@@ -1,0 +1,13 @@
+### 9091 -> 9094
+GET http://localhost:9091/restTemplateGetTest
+
+
+###
+POST http://localhost:9091/restTemplatePostTest
+Content-Type: application/json
+
+{
+  "key": 8456
+}
+###
+
