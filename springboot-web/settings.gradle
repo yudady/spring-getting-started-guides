@@ -1,5 +1,5 @@
 rootProject.name = 'springboot-web'
 
 include 'web-01-start'
-include 'web-02-cache'
+include 'web-02-default-cache'
 include 'web-03-actuator'
