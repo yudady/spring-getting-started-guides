@@ -1,13 +1,5 @@
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-configuration-processor'
-	implementation 'org.springframework.boot:spring-boot-devtools'
-
-	implementation 'com.opencsv:opencsv:5.7.0'
-
-
-	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
-
 
 }
 
