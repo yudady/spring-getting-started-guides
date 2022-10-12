@@ -1,7 +1,7 @@
 rootProject.name = 'springboot-web'
 
-//include 'web-01-start'
-//include 'web-02-default-cache'
-//include 'web-03-actuator'
-//include 'web-04-fileupload-filedownload'
+include 'web-01-start'
+include 'web-02-default-cache'
+include 'web-03-actuator'
+include 'web-04-fileupload-filedownload'
 include 'web-05-interceptor'
