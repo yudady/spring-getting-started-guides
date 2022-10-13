@@ -1,5 +1,5 @@
 rootProject.name = 'springboot-environment'
 
 include('environment-01-open-debug')
-include('environment-02-json')
+include('environment-02-convert-json-using-yaml-loader')
 include('environment-03-json')
