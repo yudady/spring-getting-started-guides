@@ -52,9 +52,10 @@ public class App implements CommandLineRunner, ApplicationRunner {
 		ObjectMapper mapper = new ObjectMapper(new YAMLFactory()
 			.disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER));
 
-		//		Java 8 date/time type `java.time.LocalDate` not supported by default:
-		//		add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
-		//		to enable handling (through reference chain: io.github.yudady.model.Order["date"])
+		// Caused by: com.fasterxml.jackson.databind.exc.InvalidDefinitionException:
+		// Java 8 date/time type `java.time.LocalDate` not supported by default:
+		// add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling
+		// (through reference chain: io.github.yudady.model.Order["date"])
 		mapper.registerModule(new JavaTimeModule());
 
 		List<OrderLine> lines = new ArrayList<>();
