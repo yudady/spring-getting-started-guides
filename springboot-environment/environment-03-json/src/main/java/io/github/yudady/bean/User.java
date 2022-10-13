@@ -1,13 +1,10 @@
 package io.github.yudady.bean;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
-@Data
 @ToString
 @EqualsAndHashCode
 @Configuration(proxyBeanMethods = true)
@@ -19,4 +16,20 @@ public class User {
 	@Value("${my.age}")
 	public Integer age;
 
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
+	}
 }

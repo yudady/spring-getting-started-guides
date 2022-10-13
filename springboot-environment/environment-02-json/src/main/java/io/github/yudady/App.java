@@ -1,11 +1,9 @@
 package io.github.yudady;
 
 
-import java.util.Arrays;
-
 import io.github.yudady.bean.User;
+import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
