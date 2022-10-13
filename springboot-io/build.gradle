@@ -45,7 +45,7 @@ subprojects {
 		publications {
 			// bootJar is the default build task configured by Spring Boot
 			mavenJava(MavenPublication) {
-				group 'io.yudady.github.springboot'
+				group 'io.yudady.github.springboot-io'
 				artifactId = project.name
 				version '0.0.1'
 				// bootJar is the default build task configured by Spring Boot
