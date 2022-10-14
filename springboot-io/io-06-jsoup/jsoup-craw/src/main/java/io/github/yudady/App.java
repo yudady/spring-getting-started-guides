@@ -44,58 +44,17 @@ public class App implements CommandLineRunner {
 
 		Connection connect = Jsoup.connect("https://www.taiwanlottery.com.tw/Lotto/BINGOBINGO/drawing.aspx");
 		connect.followRedirects(true);
-		connect.sslSocketFactory(socketFactory());
+		connect.sslSocketFactory(getTrustAllSocketFactory());
 		connect.ignoreHttpErrors(true);
 		Document doc = connect.get();
 		System.out.println("title = " + doc.title());
 
+		String html = doc.body().html();
+		System.out.println(html);
 
-//		String html = doc.body().html();
-//		System.out.println("html = " + html);
-
-		List<Data> datas = new ArrayList<>();
-		Elements trElements = doc.select("td.thB>table.tableFull>tbody>tr");
-
-		for (Element trElement : trElements) {
-			List<String> tdTexts = trElement.select("td").eachText();
-			if (tdTexts.size() == 0) continue;
-			String num = tdTexts.get(0);
-			if ("".equals(num)) continue;
-			if (!num.matches("\\d+")) continue;
-
-
-			System.out.println("========================");
-			System.out.println(tdTexts);
-			System.out.println("========================");
-		}
-
-
-//		Element targetElement = trElements.get(0);
-//		System.out.println(trElements.html());
-//		IntStream.range(1, 10).forEach(n -> System.out.println("========================"));
-
-
-//		System.out.println(trElements.get(1));
-
-//		for (Element trElement : trElements) {
-//			if (trElement.firstElementChild().text().equals("")) continue;
-//
-//			String html = trElement.html();
-//			System.out.println("html = " + html);
-//			Document tdsDocument = Jsoup.parse(html);
-//			Elements tdElements = tdsDocument.select("td");
-//			List<String> texts = tdElements.eachText();
-//			Data data = new Data(texts.get(0), texts.get(1), texts.get(2), texts.get(3), texts.get(4));
-//			datas.add(data);
-//		}
-//
-//		datas.forEach(System.out::println);
 	}
 
-	record Data(String peroid, String numbers, String bigNumber, String bigger, String odds) {
-	}
-
-	private SSLSocketFactory socketFactory() {
+	private static SSLSocketFactory getTrustAllSocketFactory() {
 		TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
 			public java.security.cert.X509Certificate[] getAcceptedIssuers() {
 				return null;
