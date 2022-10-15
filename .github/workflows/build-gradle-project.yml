@@ -38,6 +38,36 @@ jobs:
           build-root-directory: getting-started-guides/02-gs-consuming-rest
 
 
+
+
+      #########################
+      #########################
+      #########################
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: yudady/02-gs-consuming-rest:latest
+
+
+
+      #########################
+      #########################
+      #########################
           # https://slack.com/intl/zh-tw/help/articles/115005265063-Slack-%E5%82%B3%E5%85%A5%E7%9A%84-Webhook
           # https://github.com/marketplace/actions/notify-slack-action
           # - name: slack report Status
@@ -63,34 +93,6 @@ jobs:
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-
-      #########################
-      #########################
-      #########################
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: user/app:latest
-
-
-
-
-
 
 
 
