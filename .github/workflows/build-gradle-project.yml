@@ -63,7 +63,7 @@ jobs:
           context: ./getting-started-guides/02-gs-consuming-rest
           push: true
           tags: yudady/02-gs-consuming-rest:latest
-          build-args: JAR_FILE="$GITHUB_WORKSPACE/getting-started-guides/02-gs-consuming-rest/build/libs/02-gs-consuming-rest-0.0.1-SNAPSHOT.jar"
+          build-args: JAR_FILE=${{ env.GITHUB_WORKSPACE }}/getting-started-guides/02-gs-consuming-rest/build/libs/02-gs-consuming-rest-0.0.1-SNAPSHOT.jar
 
 
 
