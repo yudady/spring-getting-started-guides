@@ -60,6 +60,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
+          context: ./getting-started-guides/02-gs-consuming-rest
           push: true
           tags: yudady/02-gs-consuming-rest:latest
 
