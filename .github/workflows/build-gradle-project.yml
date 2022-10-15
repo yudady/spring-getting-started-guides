@@ -36,3 +36,26 @@ jobs:
         with:
           arguments: build
           build-root-directory: getting-started-guides/02-gs-consuming-rest
+
+
+      # https://slack.com/intl/zh-tw/help/articles/115005265063-Slack-%E5%82%B3%E5%85%A5%E7%9A%84-Webhook
+      # https://github.com/marketplace/actions/notify-slack-action
+      - name: slack report Status
+        uses: ravsamhq/notify-slack-action@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notification_title: "{workflow} has {status_message}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+          notify_when: "failure"
+        env:
+          SLACK_WEBHOOK_URL: ${{ SLACK_WEBHOOK_URL }}
+
+
+
+
+
+
+
