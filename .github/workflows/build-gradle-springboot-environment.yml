@@ -34,6 +34,11 @@ jobs:
       - name: echo-GITHUB_WORKSPACE
         run: echo "$GITHUB_WORKSPACE"
 
+      - name: echo-list
+        run: ls -la
+
+      - name: change Permission
+        run: chmod +x ./springboot-environment/gradlew
 
       - name: run gradle
         uses: gradle/gradle-build-action@v2
