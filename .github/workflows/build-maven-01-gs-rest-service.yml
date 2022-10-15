@@ -15,7 +15,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: "$GITHUB_WORKSPACE"/getting-started-guides/01-gs-rest-service
+        working-directory: getting-started-guides/01-gs-rest-service
 
     steps:
       - name: checkout source code
@@ -41,7 +41,7 @@ jobs:
       - name: echo-build-folder
         run: ls -la
 
-      - name: pwd
+      - name: pwd "$GITHUB_WORKSPACE"
         run: pwd
 
       - name: run maven
