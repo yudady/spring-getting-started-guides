@@ -1,14 +1,16 @@
-name: Run Gradle on PRs
+name: build maven project
 on:
   push:
     branches:
       - main
     paths:
       - 'getting-started-guides/01-gs-rest-service/**'
-      - '.github/workflows/build-maven-01-gs-rest-service.yml'
+      - 'getting-started-guides/03-gs-testing-web-main/**'
+      - '.github/workflows/build-maven-project.yml'
 
 jobs:
-  gradle:
+
+  maven-builder:
 
     runs-on: ubuntu-latest
 
