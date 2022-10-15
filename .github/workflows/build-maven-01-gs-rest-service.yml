@@ -35,13 +35,48 @@ jobs:
           java-version: 17
           maven-version: 3.8.6
 
-
+      # =====================================
       - name: echo-build-folder
         run: ls -la
+      #  Run ls -la
+      #  total 72
+      #  drwxr-xr-x 14 runner docker 4096 Oct 15 12:22 .
+      #  drwxr-xr-x  3 runner docker 4096 Oct 15 12:22 ..
+      #  drwxr-xr-x  2 runner docker 4096 Oct 15 12:22 .devcontainer
+      #  drwxr-xr-x  8 runner docker 4096 Oct 15 12:22 .git
+      #  drwxr-xr-x  3 runner docker 4096 Oct 15 12:22 .github
+      #  -rw-r--r--  1 runner docker  387 Oct 15 12:22 .gitignore
+      #  drwxr-xr-x 10 runner docker 4096 Oct 15 12:22 99-springboot
+      #  -rw-r--r--  1 runner docker  555 Oct 15 12:22 Jenkinsfile
+      #  -rw-r--r--  1 runner docker  151 Oct 15 12:22 README.md
+      #  drwxr-xr-x  6 runner docker 4096 Oct 15 12:22 docs
+      #  drwxr-xr-x 13 runner docker 4096 Oct 15 12:22 getting-started-guides
+      #  -rw-r--r--  1 runner docker  858 Oct 15 12:22 mkdocs.yml
+      #  drwxr-xr-x 10 runner docker 4096 Oct 15 12:22 sagan
+      #  drwxr-xr-x  5 runner docker 4096 Oct 15 12:22 springboot-data
+      #  drwxr-xr-x  5 runner docker 4096 Oct 15 12:22 springboot-environment
+      #  drwxr-xr-x  9 runner docker 4096 Oct 15 12:22 springboot-io
+      #  drwxr-xr-x  9 runner docker 4096 Oct 15 12:22 springboot-web
+      #  drwxr-xr-x 11 runner docker 4096 Oct 15 12:22 springboot2
+
+
 
       - name: pwd
         run: pwd
+      # =====================================
+      #  Run pwd
+      #  /home/runner/work/spring-getting-started-guides/spring-getting-started-guides
 
-      - name: run maven
+
+      - name: echo GITHUB_WORKSPACE
+        run: echo "$GITHUB_WORKSPACE"
+
+
+      - name: maven build 01-gs-rest-service
         run: mvn package
         working-directory: getting-started-guides/01-gs-rest-service
+
+
+      - name: maven build 02-gs-consuming-rest
+        run: mvn package
+        working-directory: getting-started-guides/02-gs-consuming-rest
