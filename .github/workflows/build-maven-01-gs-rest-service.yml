@@ -12,10 +12,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-#    defaults:
-#      run:
-#        shell: bash
-#        working-directory: getting-started-guides/01-gs-rest-service
+    defaults:
+      run:
+        shell: bash
+        working-directory: getting-started-guides
 
     steps:
       - name: checkout source code
@@ -44,9 +44,9 @@ jobs:
       - name: echo-build-folder
         run: ls -la
 
-      - name: pwd "$GITHUB_WORKSPACE"
+      - name: pwd
         run: pwd
 
       - name: run maven
-        run: mvn -V
+        run: mvn package
         working-directory: getting-started-guides/01-gs-rest-service
