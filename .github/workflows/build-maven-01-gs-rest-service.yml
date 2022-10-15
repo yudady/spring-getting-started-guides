@@ -49,4 +49,4 @@ jobs:
 
       - name: run maven
         run: mvn -V
-        working-directory: "$GITHUB_WORKSPACE"/getting-started-guides/01-gs-rest-service
+        working-directory: getting-started-guides/01-gs-rest-service
