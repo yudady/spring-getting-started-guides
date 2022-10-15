@@ -1,21 +1,18 @@
-name: Run Gradle on PRs
+name: build gradle project
 on:
   push:
     branches:
       - main
     paths:
       - 'springboot-environment/**'
-      - '.github/workflows/build-gradle-springboot-environment.yml'
+      - '.github/workflows/build-gradle-project.yml'
 
 jobs:
-  gradle:
+
+  gradle-builder:
 
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        shell: bash
-        working-directory: springboot-environment
 
     steps:
       - name: checkout source code
@@ -31,17 +28,11 @@ jobs:
           java-version: 17
 
 
-      - name: echo-GITHUB_WORKSPACE
-        run: echo "$GITHUB_WORKSPACE"
-
-      - name: echo-list
-        run: ls -la
-
-      - name: change Permission
-        run: chmod +x "$GITHUB_WORKSPACE"/springboot-environment/gradlew
+      - name: change gradlew Permission
+        run: chmod +x "$GITHUB_WORKSPACE"/getting-started-guides/gradlew
 
       - name: run gradle
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-          build-root-directory: ./springboot-environment
+          build-root-directory: getting-started-guides/02-gs-consuming-rest
