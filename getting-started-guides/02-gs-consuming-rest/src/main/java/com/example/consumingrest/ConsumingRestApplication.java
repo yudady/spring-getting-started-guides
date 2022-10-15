@@ -2,6 +2,7 @@ package com.example.consumingrest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,9 +27,9 @@ public class ConsumingRestApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			Quote quote = restTemplate.getForObject(
-					"https://quoters.apps.pcfone.io/api/random", Quote.class);
-			log.info(quote.toString());
+//			Quote quote = restTemplate.getForObject(
+//					"https://quoters.apps.pcfone.io/api/random", Quote.class);
+			log.info("CommandLineRunner.................");
 		};
 	}
 }
