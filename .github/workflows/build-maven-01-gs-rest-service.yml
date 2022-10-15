@@ -19,14 +19,13 @@ jobs:
           fetch-depth: 1
 
 
-      - name: jdk 17
+      - name: Setup jdk 17
         uses: actions/setup-java@v3
         with:
           distribution: temurin
           java-version: 17
 
-      - name: echo-GITHUB_WORKSPACE
-        run: echo "$GITHUB_WORKSPACE"
+
 
 
       - name: Setup Maven Action
@@ -35,8 +34,11 @@ jobs:
           java-version: 17
           maven-version: 3.8.6
 
+
+
+
       # =====================================
-      - name: echo-build-folder
+      - name: echo command folder
         run: ls -la
       #  Run ls -la
       #  total 72
@@ -61,15 +63,23 @@ jobs:
 
 
 
+
+      # =====================================
       - name: pwd
         run: pwd
-      # =====================================
       #  Run pwd
       #  /home/runner/work/spring-getting-started-guides/spring-getting-started-guides
 
 
-      - name: echo GITHUB_WORKSPACE
+
+
+      # =====================================
+      - name: echo-GITHUB_WORKSPACE
         run: echo "$GITHUB_WORKSPACE"
+      #  Run echo "$GITHUB_WORKSPACE"
+      #  /home/runner/work/spring-getting-started-guides/spring-getting-started-guides
+
+
 
 
       - name: maven build 01-gs-rest-service
@@ -77,6 +87,6 @@ jobs:
         working-directory: getting-started-guides/01-gs-rest-service
 
 
-      - name: maven build 02-gs-consuming-rest
+      - name: maven build 03-gs-testing-web-main
         run: mvn package
-        working-directory: getting-started-guides/02-gs-consuming-rest
+        working-directory: getting-started-guides/03-gs-testing-web-main
