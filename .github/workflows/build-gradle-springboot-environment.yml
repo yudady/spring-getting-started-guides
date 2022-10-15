@@ -29,5 +29,8 @@ jobs:
         run: |
           cd ./springboot-environment
 
+      - name: list folder files
+        run: tree .
+
       - name: Execute Gradle build
         run: ./gradlew clean build
