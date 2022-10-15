@@ -34,7 +34,7 @@ jobs:
       - name: run gradle
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: build
+          arguments: bootJar
           build-root-directory: getting-started-guides/02-gs-consuming-rest
 
 
@@ -63,6 +63,7 @@ jobs:
           context: ./getting-started-guides/02-gs-consuming-rest
           push: true
           tags: yudady/02-gs-consuming-rest:latest
+          build-args: JAR_FILE="$GITHUB_WORKSPACE"/getting-started-guides/02-gs-consuming-rest/build/libs/02-gs-consuming-rest-0.0.1-SNAPSHOT.jar
 
 
 
