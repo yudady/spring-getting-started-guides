@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'springboot-environment/**'
+      - 'getting-started-guides/02-gs-consuming-rest/**'
       - '.github/workflows/build-gradle-project.yml'
 
 jobs:
