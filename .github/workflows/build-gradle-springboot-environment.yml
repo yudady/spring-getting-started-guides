@@ -38,7 +38,7 @@ jobs:
         run: ls -la
 
       - name: change Permission
-        run: chmod +x ./springboot-environment/gradlew
+        run: chmod +x "$GITHUB_WORKSPACE"/springboot-environment/gradlew
 
       - name: run gradle
         uses: gradle/gradle-build-action@v2
