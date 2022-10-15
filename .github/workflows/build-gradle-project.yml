@@ -65,7 +65,7 @@ jobs:
           tags: yudady/02-gs-consuming-rest:latest
 
           # FIXME
-          build-args: JAR_FILE=./libs/02-gs-consuming-rest-0.0.1-SNAPSHOT.jar
+          build-args: JAR_FILE=./build/libs/02-gs-consuming-rest-0.0.1-SNAPSHOT.jar
 
 
 
