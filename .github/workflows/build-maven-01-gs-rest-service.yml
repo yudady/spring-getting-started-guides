@@ -12,11 +12,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        shell: bash
-        working-directory: getting-started-guides
-
     steps:
       - name: checkout source code
         uses: actions/checkout@v3
