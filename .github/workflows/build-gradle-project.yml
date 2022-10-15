@@ -56,12 +56,13 @@ jobs:
           
       # https://axolo.co/blog/p/top-4-github-action-slack-integration
       - uses: 8398a7/action-slack@v3
+        if: always() # Pick up events even if the job fails or is canceled.
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
+          if_mention: 'failure,cancelled'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-        if: always() # Pick up events even if the job fails or is canceled.
 
 
 
