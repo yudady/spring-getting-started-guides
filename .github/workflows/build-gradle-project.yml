@@ -29,7 +29,7 @@ jobs:
 
 
       - name: change gradlew Permission
-        run: chmod +x "$GITHUB_WORKSPACE"/getting-started-guides/gradlew
+        run: chmod +x "$GITHUB_WORKSPACE"/getting-started-guides/02-gs-consuming-rest/gradlew
 
       - name: run gradle
         uses: gradle/gradle-build-action@v2
