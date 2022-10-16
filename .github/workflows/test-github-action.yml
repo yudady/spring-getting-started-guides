@@ -27,8 +27,8 @@ jobs:
       - name: run test-github-action.sh end
         run: |
           echo "==========done========================="
-          
-          
+  
+
   test-command:
     runs-on: ubuntu-latest
     steps:
@@ -42,3 +42,15 @@ jobs:
           pwd
           echo ""
           echo "==================================="
+
+  depends-on-other-jobs:
+    needs: [ test-shell, test-command ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo command
+        run: |
+          echo "==================================="
+          echo "GO!!!!!!!!!!!!!!!!!!!!!"
+          echo "==================================="  
+          
+          
