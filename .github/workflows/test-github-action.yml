@@ -20,7 +20,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: test
-        run: sh .github/workflows/scripts/ci.sh
+        run: sh ./.github/workflows/scripts/ci.sh
 
       - name: run shell end
         run: |
