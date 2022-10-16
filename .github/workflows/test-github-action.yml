@@ -20,4 +20,14 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: run test-github-action.sh
-        run: ./.github/workflows/shells/test-github-action.sh
+        run: sh .github/workflows/scripts/test-github-action.sh
+
+      - name: run shell end
+        run: |
+          echo "==========run shell end========================="
+          echo "==========run shell end========================="
+          echo "==========run shell end========================="
+          echo "==================================="
+          echo "==================================="
+          ls -la
+          pwd
