@@ -9,7 +9,7 @@ on:
       - '.github/workflows/scripts/test-github-action.sh'
 
 jobs:
-  test-github-action:
+  test-shell:
     runs-on: ubuntu-latest
     steps:
 
@@ -18,11 +18,6 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Retrieve secret
-        env:
-          super_secret: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: echo "$slack_webhook_url"
-
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
@@ -30,6 +25,14 @@ jobs:
         run: sh ./.github/workflows/scripts/test-github-action.sh
 
       - name: run test-github-action.sh end
+        run: |
+          echo "==========done========================="
+          
+          
+  test-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo command
         run: |
           echo "==========done========================="
           ls -la
