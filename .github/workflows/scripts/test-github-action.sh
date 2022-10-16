@@ -1,15 +1,18 @@
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
-echo hi
+echo "====================================="
+echo "1 路徑?"
+pwd
+echo ''
+
+echo "2 目錄有哪些東西"
+la -la
+echo ''
+
+
+echo "3 env"
+env
+echo ''
+
+echo "====================================="
+
+
+

@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - '.github/workflows/test-github-action.yml'
+      - '.github/workflows/scripts/test-github-action.sh'
 
 jobs:
   test-github-action:
