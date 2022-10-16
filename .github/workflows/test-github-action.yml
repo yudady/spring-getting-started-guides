@@ -13,6 +13,11 @@ jobs:
     steps:
       - name: Retrieve secret
         env:
-          super_secret: ${{ secrets.SUPERSECRET }}
-        run: |
-          example-command "$super_secret"
+          super_secret: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: echo "$slack_webhook_url"
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: run shell
+        run: .github/workflows/shells/test-github-action.sh
