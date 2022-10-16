@@ -1,17 +1,18 @@
-name: test slack after build
+name: test github action
+
 on:
-  workflow_run:
-    workflows: [Build]
-    types: [completed]
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/test-github-action.yml'
 
 jobs:
-  on-success:
+  test-github-action:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - run: echo 'The triggering workflow passed'
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-    steps:
-      - run: echo 'The triggering workflow failed'
+      - name: Retrieve secret
+        env:
+          super_secret: ${{ secrets.SUPERSECRET }}
+        run: |
+          example-command "$super_secret"
