@@ -9,7 +9,26 @@ on:
       - '.github/workflows/scripts/test-github-action.sh'
 
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo command
+        run: |
+          echo "==================================="
+          echo "GO!!!!!!!!!!!!!!!!!!!!!"
+          echo "==================================="
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo command
+        run: |
+          echo "==================================="
+          echo "GO!!!!!!!!!!!!!!!!!!!!!"
+          echo "==================================="  
+
   test-shell:
+    needs: job2
     runs-on: ubuntu-latest
     steps:
 
