@@ -1,15 +1,20 @@
 echo "====================================="
-echo "1 路徑?"
+echo "1 : pwd : 路徑?"
 pwd
 echo ''
 
-echo "2 目錄有哪些東西"
-la -la
+echo "2 : ls -la : 目錄有哪些東西"
+ls -la
 echo ''
 
 
-echo "3 env"
+echo "3 : env : 有哪些可以用"
 env
+echo ''
+
+
+echo "4 : gradle -v : gradle 版本"
+gradle -v
 echo ''
 
 echo "====================================="
