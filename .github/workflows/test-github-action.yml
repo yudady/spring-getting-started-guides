@@ -18,7 +18,6 @@ jobs:
           echo "GO!!!!!!!!!!!!!!!!!!!!!"
           echo "==================================="
   job2:
-    needs: job1
     runs-on: ubuntu-latest
     steps:
       - name: echo command
@@ -27,18 +26,9 @@ jobs:
           echo "GO!!!!!!!!!!!!!!!!!!!!!"
           echo "==================================="  
 
-  job3:
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo command
-        run: |
-          echo "==================================="
-          echo "GO!!!!!!!!!!!!!!!!!!!!!"
-          echo "==================================="
-
 
   test-shell:
-    needs: job2
+    needs: job1
     runs-on: ubuntu-latest
     steps:
 
@@ -57,23 +47,11 @@ jobs:
         run: |
           echo "==========done========================="
   
-
-  test-command:
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo command
-        run: |
-          echo "==================================="
-          echo "run : ls -la"
-          ls -la
-          echo ""
-          echo "run : pwd"
-          pwd
-          echo ""
-          echo "==================================="
+  
+  
 
   depends-on-other-jobs:
-    needs: [ test-shell, test-command ,job3 ]
+    needs: [ job2 ,test-shell ]
     runs-on: ubuntu-latest
     steps:
       - name: echo command
