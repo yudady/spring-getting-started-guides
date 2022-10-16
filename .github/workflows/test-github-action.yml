@@ -17,8 +17,6 @@ jobs:
         with:
           fetch-depth: 1
 
-
-
       - name: Retrieve secret
         env:
           super_secret: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -28,19 +26,10 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: test
-        run: sh ./ci.sh
+        run: sh ./.github/workflows/scripts/test-github-action.sh
 
-      - name: run shell end
+      - name: run test-github-action.sh end
         run: |
-          echo "==========run shell end========================="
-          echo "==========run shell end========================="
-          echo "==========run shell end========================="
-          echo "==================================="
-          echo "==================================="
-          echo "==================================="
-          echo "==================================="
-          echo "==================================="
-          echo "==================================="
-          echo "==================================="
+          echo "==========done========================="
           ls -la
           pwd
