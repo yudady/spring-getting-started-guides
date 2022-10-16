@@ -34,6 +34,11 @@ jobs:
     steps:
       - name: echo command
         run: |
-          echo "==========done========================="
+          echo "==================================="
+          echo "run : ls -la"
           ls -la
+          echo ""
+          echo "run : pwd"
           pwd
+          echo ""
+          echo "==================================="
