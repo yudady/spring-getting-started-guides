@@ -19,5 +19,5 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: run shell
-        run: .github/workflows/shells/test-github-action.sh
+      - name: run test-github-action.sh
+        run: ./.github/workflows/shells/test-github-action.sh
