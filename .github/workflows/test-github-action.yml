@@ -51,7 +51,7 @@ jobs:
   
 
   depends-on-other-jobs:
-    needs: [ job2 ,test-shell ]
+    needs: [ job2 ]
     runs-on: ubuntu-latest
     steps:
       - name: echo command
