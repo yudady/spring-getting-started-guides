@@ -7,10 +7,11 @@ services:
     volumes:
       - .:/code
   prometheus:
-    image: prom/prometheus
+    image: bitnami/prometheus:latest
     container_name: prometheus
     volumes:
       - ./env/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data/prometheus-persistence:/opt/bitnami/prometheus/data
     ports:
       - 9090:9090
   grafana:

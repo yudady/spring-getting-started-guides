@@ -1,0 +1,33 @@
+# debug: true
+# management 是所有actuator的配置
+# management.endpoint.端点名.xxxx  对某个端点的具体配置
+management:
+  endpoints:
+    enabled-by-default: true  #默认开启所有监控端点  true
+    web:
+      exposure:
+        include: '*' # 以web方式暴露所有端点
+
+
+  metrics:
+    export:
+      prometheus:
+        descriptions: true # 是否将发布描述作为scrape有效负载的一部分启用到Prometheus。将其关闭以最小化每次刮擦发送的数据量。
+        enabled: true # 是否启用将指标导出到Prometheus。
+        step: 5s # 要使用的步长（即报告频率）。
+#        push-gateway:
+#          base-url: pushgateway:9091 # 推送 pushgateway，promethues 在 pull
+#          enabled: true # 通过Prometheus Pushgateway启用发布。
+#          push-rate: 5s
+#          shutdown-operation: push #  endpoint:   #对某个端点的具体配置
+
+#  management.metrics.export.prometheus.descriptions = true＃是否将发布描述作为scrape有效负载的一部分启用到Prometheus。将其关闭以最小化每次刮擦发送的数据量。
+#  management.metrics.export.prometheus.enabled = true ＃是否启用将指标导出到Prometheus。
+#  management.metrics.export.prometheus.step = 1m ＃要使用的步长（即报告频率）。
+#  management.metrics.export.prometheus.pushgateway.base-url = localhost：9091 ＃Pushgateway的基本URL。
+#  management.metrics.export.prometheus.pushgateway.enabled = false ＃通过Prometheus Pushgateway启用发布。
+#  management.metrics.export.prometheus.pushgateway.grouping-key =＃为推送的指标分组键。
+#  management.metrics.export.prometheus.pushgateway.job = ＃此应用程序实例的作业标识符。
+#  management.metrics.export.prometheus.pushgateway.push-rate = 1m ＃用于推送指标的频率。
+#  management.metrics.export.prometheus.pushgateway.shutdown-operation = ＃应该在关机时执行的操作。
+

@@ -15,6 +15,5 @@ EXPOSE 8080
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
 
-# $ docker build .
-# $ docker build -t yudady/01-gs-rest-service .
-# $ docker run -p 8080:8080 yudady/01-gs-rest-service
+# $ docker build -t yudady/devops-03-prometheus --progress=plain --build-arg JAR_FILE=build/libs/devops-03-prometheus-0.0.1-SNAPSHOT.jar .
+# $ docker build -t yudady/devops-03-prometheus --build-arg JAR_FILE=build/libs/devops-03-prometheus-0.0.1-SNAPSHOT.jar .
