@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  maven-builder:
+  build-devops01-project:
 
     runs-on: ubuntu-latest
 
