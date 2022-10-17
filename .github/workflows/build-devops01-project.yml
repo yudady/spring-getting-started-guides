@@ -1,4 +1,4 @@
-name: build maven project
+name: build-devops01-project
 on:
   push:
     branches:

@@ -1,15 +1,15 @@
-name: build devpos02 project
+name: build-devops02-project
 on:
   push:
     branches:
       - main
     paths:
       - 'springboot-devops/devops-02-gradle/**'
-      - '.github/workflows/build-devpos02-project.yml'
+      - '.github/workflows/build-devops02-project.yml'
 
 jobs:
 
-  build-devpos02-project:
+  build-devops02-project:
 
     runs-on: ubuntu-latest
 
