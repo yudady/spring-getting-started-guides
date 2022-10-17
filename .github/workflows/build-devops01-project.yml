@@ -46,7 +46,6 @@ jobs:
       #########################
       #########################
 
-
       - name: build maven jar
         run: mvn package
         working-directory: springboot-devops/devops-01-gradle
