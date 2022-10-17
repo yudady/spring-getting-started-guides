@@ -10,6 +10,6 @@ GET http://localhost:8080/actuator/prometheus
 
 ###
 # curl -X PUT http://prometheus:9091/api/v1/admin/wipe
-PUT http://prometheus:9090/api/v1/admin/wipe
+#PUT http://prometheus:9090/api/v1/admin/wipe
 
 ###
