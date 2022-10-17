@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'springboot-devops/devops-01-gradle/**'
+      - 'springboot-devops/devops-01-maven/**'
       - '.github/workflows/build-devops01-project.yml'
 
 jobs:
@@ -36,11 +36,11 @@ jobs:
           maven-version: 3.8.6
 
 
-      - name: run customize-action shell
-        run: |
-        sh chmod +x ./springboot-devops/devops-01-gradle/github-action.sh
-        sh ./springboot-devops/devops-01-gradle/github-action.sh
+      - name: change github-action.sh Permission
+        run: chmod +x ./springboot-devops/devops-01-maven/github-action.sh
 
+      - name: run customize-action shell
+        run: sh ./springboot-devops/devops-01-maven/github-action.sh
 
       #########################
       #########################
@@ -48,7 +48,7 @@ jobs:
 
       - name: build maven jar
         run: mvn package
-        working-directory: springboot-devops/devops-01-gradle
+        working-directory: springboot-devops/devops-01-maven
 
 
       #######################################
