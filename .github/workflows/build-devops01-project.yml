@@ -37,7 +37,9 @@ jobs:
 
 
       - name: run customize-action shell
-        run: sh ./springboot-devops/devops-01-gradle/github-action.sh
+        run: |
+        chmod +x ./springboot-devops/devops-01-gradle/github-action.sh
+        sh ./springboot-devops/devops-01-gradle/github-action.sh
 
 
       #########################
