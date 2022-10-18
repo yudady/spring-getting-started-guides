@@ -1,15 +1,15 @@
-name: build-devops01-project
+name: devops-01-maven
 on:
   push:
     branches:
       - main
     paths:
       - 'springboot-devops/devops-01-maven/**'
-      - '.github/workflows/build-devops01-project.yml'
+      - '.github/workflows/build-devops01-maven-project.yml'
 
 jobs:
 
-  build-devops01-project:
+  devops-01-maven:
 
     runs-on: ubuntu-latest
 

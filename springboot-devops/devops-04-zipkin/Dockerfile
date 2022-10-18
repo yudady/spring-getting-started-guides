@@ -15,5 +15,5 @@ EXPOSE 8080
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
 
-# $ docker build -t yudady/devops-02-gradle --progress=plain --build-arg JAR_FILE=build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar .
-# $ docker build -t yudady/devops-02-gradle --build-arg JAR_FILE=build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar .
+# $ docker build -t yudady/devops-04-zipkin --progress=plain --build-arg JAR_FILE=build/libs/devops-04-zipkin-0.0.1-SNAPSHOT.jar .
+# $ docker build -t yudady/devops-04-zipkin --build-arg JAR_FILE=build/libs/devops-04-zipkin-0.0.1-SNAPSHOT.jar .

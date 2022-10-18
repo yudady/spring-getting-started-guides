@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+
+  prometheus:
+    container_name: prometheus
+    image: bitnami/prometheus:2.39.0
+    volumes:
+      - ./env/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data/prometheus-persistence:/opt/bitnami/prometheus/data
+    ports:
+      - 9090:9090
+
+  grafana:
+    container_name: grafana
+    depends_on:
+      - prometheus
+    image: grafana/grafana:8.2.6
+    ports:
+      - 3000:3000
+    env_file:
+      - ./env/grafana.env
+
+  devops-03-prometheus:
+    container_name: devops-03-prometheus
+    depends_on:
+      - grafana
+    build:
+      context: .
+      args:
+        JAR_FILE: build/libs/devops-03-prometheus-0.0.1-SNAPSHOT.jar
+    ports:
+      - 8080:8080
+
+
