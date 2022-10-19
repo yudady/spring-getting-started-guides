@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e24cfbddebeb905e",
+        "id": "156d07616092c122",
         "type": "tabs",
         "children": [
           {
-            "id": "3f847b96af45c3e2",
+            "id": "4000cc69718d4bf9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "index.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -190,7 +185,7 @@
   "ribbon": {
     "mostRecentAction": ""
   },
-  "active": "3f847b96af45c3e2",
+  "active": "4000cc69718d4bf9",
   "lastOpenFiles": [
     "001-TODO/spring.md",
     "index.md",
