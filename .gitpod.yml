@@ -1,5 +1,8 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
-  - init: gradle clean
+  - init: java --version
 
 
 
