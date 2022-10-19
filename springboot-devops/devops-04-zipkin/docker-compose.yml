@@ -1,34 +1,77 @@
-version: '3.9'
+version: '2'
+
 services:
-
-  prometheus:
-    container_name: prometheus
-    image: bitnami/prometheus:2.39.0
-    volumes:
-      - ./env/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./data/prometheus-persistence:/opt/bitnami/prometheus/data
+  client-module:
+    image: yudady/devops-04-zipkin:latest
+    environment:
+      - CUSTOM_NEXT_CALL=true
+      - CUSTOM_URLS=http://module-1:8080/module,http://module-3:8080/module,http://module-error:8080/module
+      - CUSTOM_DELAY=100
+      - CUSTOM_DELAY_METHOD=true
+      - SPRING_APPLICATION_NAME=client-module
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin:9411/
+      - SPRING_ZIPKIN_ENABLED=true
+      - SERVER_PORT=8080
     ports:
-      - 9090:9090
+     - "9900:8080"
 
-  grafana:
-    container_name: grafana
-    depends_on:
-      - prometheus
-    image: grafana/grafana:8.2.6
+  module-1:
+    image: yudady/devops-04-zipkin:latest
+    environment:
+      - CUSTOM_NEXT_CALL=true
+      - CUSTOM_URLS=http://module-2:8080/module,http://module-3:8080/module
+      - CUSTOM_DELAY=70
+      - CUSTOM_DELAY_METHOD=true
+      - SPRING_APPLICATION_NAME=module-1
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin:9411/
+      - SPRING_ZIPKIN_ENABLED=true
+      - SERVER_PORT=8080
     ports:
-      - 3000:3000
-    env_file:
-      - ./env/grafana.env
+     - "9901:8080"
 
-  devops-03-prometheus:
-    container_name: devops-03-prometheus
-    depends_on:
-      - grafana
-    build:
-      context: .
-      args:
-        JAR_FILE: build/libs/devops-03-prometheus-0.0.1-SNAPSHOT.jar
+  module-2:
+    image: yudady/devops-04-zipkin:latest
+    environment:
+      - CUSTOM_NEXT_CALL=true
+      - CUSTOM_URLS=http://module-3:8080/module,http://module-error:8080/module
+      - CUSTOM_DELAY=1000
+      - CUSTOM_DELAY_METHOD=true
+      - SPRING_APPLICATION_NAME=module-2
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin:9411/
+      - SPRING_ZIPKIN_ENABLED=true
+      - SERVER_PORT=8080
     ports:
-      - 8080:8080
+     - "9902:8080"
 
+  module-3:
+    image: yudady/devops-04-zipkin:latest
+    environment:
+      - CUSTOM_NEXT_CALL=false
+      - CUSTOM_DELAY_METHOD=false
+      - CUSTOM_MESSAGE=this message is from last module
+      - SPRING_APPLICATION_NAME=module-3
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin:9411/
+      - SPRING_ZIPKIN_ENABLED=true
+      - SERVER_PORT=8080
+    ports:
+     - "9903:8080"
 
+  module-error:
+    image: yudady/devops-04-zipkin:latest
+    environment:
+      - CUSTOM_NEXT_CALL=false
+      - CUSTOM_DELAY_METHOD=true
+      - CUSTOM_DELAY=1000
+      - CUSTOM_MESSAGE=this message is from error module
+      - SPRING_APPLICATION_NAME=module-error
+      - SPRING_ZIPKIN_BASE_URL=http://zipkin:9411/
+      - SPRING_ZIPKIN_ENABLED=true
+      - CUSTOM_HTTP_STATUS_SUCCESS=false
+      - SERVER_PORT=8080
+    ports:
+      - "9904:8080"
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+     - "9411:9411"
