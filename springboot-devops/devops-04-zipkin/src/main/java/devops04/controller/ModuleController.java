@@ -29,27 +29,28 @@ public class ModuleController {
 
     @GetMapping("/module")
     public ResponseEntity<String> getCall() throws InterruptedException {
-
         String response = properties.getMessage();
-        log.info("Application name {}",name);
-        if(properties.isNextCall()){
-            for(String url : properties.getUrls()){
-            log.info(url);
-            try{
-            response += "<br>" + restTemplate.getForObject(url, String.class);
-            } catch ( Exception e){
-                response += e.getMessage();
-            }
+        log.info("Application name {}", name);
+
+        if (properties.isNextCall()) {
+
+            for (String url : properties.getUrls()) {
+                log.info(url);
+                try {
+
+                    response += "<br>" + restTemplate.getForObject(url, String.class);
+                } catch (Exception e) {
+                    response += e.getMessage();
+                }
             }
         }
 
-        if(properties.isDelayMethod())
-            delayMethod();
+        if (properties.isDelayMethod()) delayMethod();
 
-        log.info("Application responce {}",response);
+        log.info("Application responce {}", response);
 
-        return new ResponseEntity<>(response + " : current module name : "+name,
-                properties.isHttpStatusSuccess() ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(response + " : current module name : " + name,
+            properties.isHttpStatusSuccess() ? HttpStatus.OK : HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     void delayMethod() throws InterruptedException {

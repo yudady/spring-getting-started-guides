@@ -1,0 +1,19 @@
+### client-module
+GET http://localhost:9900/module
+
+### module-1
+GET http://localhost:9901/module
+
+### module-2
+GET http://localhost:9902/module
+
+### module-3
+GET http://localhost:9903/module
+
+### module-error
+GET http://localhost:9904/module
+
+### zipkin
+GET http://localhost:9411
+
+###

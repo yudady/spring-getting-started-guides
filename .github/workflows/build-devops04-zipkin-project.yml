@@ -1,92 +1,92 @@
-name: devops-04-zipkin
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'springboot-devops/devops-04-zipkin/**'
-      - '.github/workflows/build-devops04-zipkin-project.yml'
-
-jobs:
-
-  devops-04-zipkin:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout source code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-
-
-      - name: jdk 11
-        uses: actions/setup-java@v3
-        with:
-          distribution: temurin
-          java-version: 11
-
-
-      - name: change gradlew Permission
-        run: chmod +x ./springboot-devops/devops-04-zipkin/gradlew
-
-
-      - name: run customize-action shell
-        run: sh ./springboot-devops/devops-04-zipkin/github-action.sh
-
-      #########################
-      #########################
-      #########################
-
-
-      - name: build gradle jar
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: bootJar
-          build-root-directory: ./springboot-devops/devops-04-zipkin
-
-
-      #######################################
-      ######### docker start ################
-      #######################################
-
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Login to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-
-      - name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: ./springboot-devops/devops-04-zipkin
-          push: true
-          tags: yudady/devops-04-zipkin:latest
-          build-args: JAR_FILE=./build/libs/devops-04-zipkin-0.0.1-SNAPSHOT.jar
-
-
-
-      - name: slack report Status
-        uses: ravsamhq/notify-slack-action@v2
-        if: always()
-        with:
-          status: ${{ job.status }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          notification_title: "{workflow} has {status_message}"
-          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
-          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
-          notify_when: "success,failure,cancelled,warnings"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-
-
-
+#name: devops-04-zipkin
+#on:
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - 'springboot-devops/devops-04-zipkin/**'
+#      - '.github/workflows/build-devops04-zipkin-project.yml'
+#
+#jobs:
+#
+#  devops-04-zipkin:
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: checkout source code
+#        uses: actions/checkout@v3
+#        with:
+#          fetch-depth: 1
+#
+#
+#      - name: jdk 11
+#        uses: actions/setup-java@v3
+#        with:
+#          distribution: temurin
+#          java-version: 11
+#
+#
+#      - name: change gradlew Permission
+#        run: chmod +x ./springboot-devops/devops-04-zipkin/gradlew
+#
+#
+#      - name: run customize-action shell
+#        run: sh ./springboot-devops/devops-04-zipkin/github-action.sh
+#
+#      #########################
+#      #########################
+#      #########################
+#
+#
+#      - name: build gradle jar
+#        uses: gradle/gradle-build-action@v2
+#        with:
+#          arguments: bootJar
+#          build-root-directory: ./springboot-devops/devops-04-zipkin
+#
+#
+#      #######################################
+#      ######### docker start ################
+#      #######################################
+#
+#
+#      - name: Set up QEMU
+#        uses: docker/setup-qemu-action@v2
+#
+#      - name: Set up Docker Buildx
+#        uses: docker/setup-buildx-action@v2
+#
+#      - name: Login to Docker Hub
+#        uses: docker/login-action@v2
+#        with:
+#          username: ${{ secrets.DOCKERHUB_USERNAME }}
+#          password: ${{ secrets.DOCKERHUB_TOKEN }}
+#
+#
+#      - name: Build and push
+#        uses: docker/build-push-action@v3
+#        with:
+#          context: ./springboot-devops/devops-04-zipkin
+#          push: true
+#          tags: yudady/devops-04-zipkin:latest
+#          build-args: JAR_FILE=./build/libs/devops-04-zipkin-0.0.1-SNAPSHOT.jar
+#
+#
+#
+#      - name: slack report Status
+#        uses: ravsamhq/notify-slack-action@v2
+#        if: always()
+#        with:
+#          status: ${{ job.status }}
+#          token: ${{ secrets.GITHUB_TOKEN }}
+#          notification_title: "{workflow} has {status_message}"
+#          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+#          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+#          notify_when: "success,failure,cancelled,warnings"
+#        env:
+#          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+#
+#
+#
+#
