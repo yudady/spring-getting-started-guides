@@ -1,0 +1,8 @@
+tasks:
+  - init: gradle clean
+
+
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
