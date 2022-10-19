@@ -1,11 +1,11 @@
-image:
-  file: .gitpod.Dockerfile
-
-tasks:
-  - init: java --version
-
-
-
-vscode:
-  extensions:
-    - vscjava.vscode-java-pack
+#image:
+#  file: .gitpod.Dockerfile
+#
+#tasks:
+#  - init: java --version
+#
+#
+#
+#vscode:
+#  extensions:
+#    - vscjava.vscode-java-pack
