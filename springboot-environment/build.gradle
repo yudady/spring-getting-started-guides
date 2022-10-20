@@ -25,6 +25,7 @@ subprojects {
 	apply plugin: 'maven-publish'
 	apply plugin: "org.springframework.boot"
 	apply plugin: 'io.spring.dependency-management'
+	apply plugin: "maven-publish"
 
 	java {
 		withJavadocJar()
@@ -42,21 +43,19 @@ subprojects {
 
 
 	publishing {
-		publications {
-			// bootJar is the default build task configured by Spring Boot
-			mavenJava(MavenPublication) {
-				group 'io.yudady.github.springboot'
-				artifactId = project.name
-				version '0.0.1'
-				// bootJar is the default build task configured by Spring Boot
-				artifact bootJar
-			}
-		}
-
 		repositories {
 			maven {
-				url = "file:///d:/tommy/github-repo/yudady/maven2"
-//				url = "file:///d:/tommy/github-repo/yudady-source/repo/maven2"
+				name = "GitHubPackages"
+				url = uri("https://maven.pkg.github.com/yudady/spring-getting-started-guides")
+				credentials {
+					username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+					password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+				}
+			}
+		}
+		publications {
+			gpr(MavenPublication) {
+				from(components.java)
 			}
 		}
 	}

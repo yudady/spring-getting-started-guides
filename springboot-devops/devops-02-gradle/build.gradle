@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id("maven-publish")
 }
 
 group = 'io.github.yudady'
@@ -19,4 +20,23 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+
+publishing {
+	repositories {
+		maven {
+			name = "github"
+			url = uri("https://maven.pkg.github.com/yudady/spring-getting-started-guides")
+			credentials {
+				username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+				password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+			}
+		}
+	}
+	publications {
+		gpr(MavenPublication) {
+			from(components.java)
+		}
+	}
 }
