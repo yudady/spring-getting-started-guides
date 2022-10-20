@@ -71,7 +71,8 @@ jobs:
                 "password": "${{ secrets.DOCKERHUB_TOKEN }}"
               }
             ]
-          output_file: .m2/settings.xml
+#          output_file: .m2/settings.xml
+            # Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
             
             
 
