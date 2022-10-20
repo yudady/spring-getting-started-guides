@@ -46,7 +46,7 @@ jobs:
           build-root-directory: ./springboot-devops/devops-02-gradle
 
       #######################################
-      ######### maven package ################
+      ######### maven settings.xml ################
       #######################################
 
       - name: 創建一個 settings-xml 放在 maven 預設目錄 .m2/settings.xml
@@ -126,6 +126,9 @@ jobs:
           build-args: JAR_FILE=./build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar
 
 
+      #######################################
+      ######### slack start ################
+      #######################################
 
       - name: slack report Status
         uses: ravsamhq/notify-slack-action@v2
