@@ -28,14 +28,14 @@ jobs:
           server-id: github
           settings-path: ${{ github.workspace }}
 
-
-
-
-      - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.5.0
-        with:
-          java-version: 17
-          maven-version: 3.8.6
+#
+#
+#
+#      - name: Setup Maven Action
+#        uses: s4u/setup-maven-action@v1.5.0
+#        with:
+#          java-version: 17
+#          maven-version: 3.8.6
 
 
       - name: change github-action.sh Permission
@@ -59,10 +59,16 @@ jobs:
 #            }]
             
             
-
-      - name: deploy to github packages
-        run: mvn package deploy
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
         working-directory: springboot-devops/devops-01-maven
+        env:
+          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+
+
+#      - name: deploy to github packages
+#        run: mvn package deploy
+#        working-directory: springboot-devops/devops-01-maven
 
 
 
