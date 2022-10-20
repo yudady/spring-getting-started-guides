@@ -69,7 +69,9 @@ jobs:
         with:
           context: ./springboot-devops/devops-02-gradle
           push: true
-          tags: yudady/devops-02-gradle:latest
+          tags: |
+            yudady/devops-02-gradle:latest
+            ghcr.io/yudady/spring-getting-started-guides/devops-02-gradle:latest
           build-args: JAR_FILE=./build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar
 
 
