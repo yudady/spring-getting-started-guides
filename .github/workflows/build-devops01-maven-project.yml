@@ -43,36 +43,36 @@ jobs:
       #########################
       #########################
       #########################
-      - name: 創建一個 settings-xml 放在 maven 預設目錄 .m2/settings.xml
-        uses: whelk-io/maven-settings-xml-action@v20
-        with:
-          repositories: >
-            [
-              {
-                "id": "central",
-                "url": "https://repo1.maven.org/maven2"
-              },
-              {
-                "id": "github",
-                "url": "https://maven.pkg.github.com/yudady/spring-getting-started-guides",
-                "releases": {
-                  "enabled": "true"
-                },
-                "snapshots": {
-                  "enabled": "true"
-                }
-              }
-            ]
-          servers: >
-            [
-              {
-                "id": "github",
-                "username": "yudady",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
-              }
-            ]
-
-# output_file: .m2/settings.xml  => Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
+#      - name: 創建一個 settings-xml 放在 maven 預設目錄 .m2/settings.xml
+#        uses: whelk-io/maven-settings-xml-action@v20
+#        with:
+#          repositories: >
+#            [
+#              {
+#                "id": "central",
+#                "url": "https://repo1.maven.org/maven2"
+#              },
+#              {
+#                "id": "github",
+#                "url": "https://maven.pkg.github.com/yudady/spring-getting-started-guides",
+#                "releases": {
+#                  "enabled": "true"
+#                },
+#                "snapshots": {
+#                  "enabled": "true"
+#                }
+#              }
+#            ]
+#          servers: >
+#            [
+#              {
+#                "id": "github",
+#                "username": "yudady",
+#                "password": "${{ secrets.GITHUB_TOKEN }}"
+#              }
+#            ]
+#
+## output_file: .m2/settings.xml  => Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
 
 
       #######################################
@@ -85,16 +85,16 @@ jobs:
 
 
 
-      #######################################
-      ######### maven Publish ################
-      #######################################
-
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
-        working-directory: springboot-devops/devops-01-maven
-        env:
-          USER_NAME: yudady
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      ######################################################################
+#      ######### github packages 下載需要 authentication ...   ###############
+#      ######################################################################
+#
+#      - name: Publish to GitHub Packages Apache Maven
+#        run: mvn deploy
+#        working-directory: springboot-devops/devops-01-maven
+#        env:
+#          USER_NAME: yudady
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       #######################################

@@ -45,50 +45,50 @@ jobs:
           arguments: bootJar
           build-root-directory: ./springboot-devops/devops-02-gradle
 
-      #######################################
-      ######### maven settings.xml ################
-      #######################################
-
-      - name: 創建一個 settings-xml 放在 maven 預設目錄 .m2/settings.xml
-        uses: whelk-io/maven-settings-xml-action@v20
-        with:
-          repositories: >
-            [
-              {
-                "id": "central",
-                "url": "https://repo1.maven.org/maven2"
-              },
-              {
-                "id": "github",
-                "url": "https://maven.pkg.github.com/yudady/spring-getting-started-guides",
-                "releases": {
-                  "enabled": "true"
-                },
-                "snapshots": {
-                  "enabled": "true"
-                }
-              }
-            ]
-          servers: >
-            [
-              {
-                "id": "github",
-                "username": "yudady",
-                "password": "${{ secrets.GITHUB_TOKEN }}"
-              }
-            ]
-
-        # output_file: .m2/settings.xml  => Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
-
-
-
-      - name: Publish package
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: publish
-          build-root-directory: ./springboot-devops/devops-02-gradle
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      ######################################################################
+#      ######### github packages 下載需要 authentication ...   ###############
+#      ######################################################################
+#
+#      - name: 創建一個 settings-xml 放在 maven 預設目錄 .m2/settings.xml
+#        uses: whelk-io/maven-settings-xml-action@v20
+#        with:
+#          repositories: >
+#            [
+#              {
+#                "id": "central",
+#                "url": "https://repo1.maven.org/maven2"
+#              },
+#              {
+#                "id": "github",
+#                "url": "https://maven.pkg.github.com/yudady/spring-getting-started-guides",
+#                "releases": {
+#                  "enabled": "true"
+#                },
+#                "snapshots": {
+#                  "enabled": "true"
+#                }
+#              }
+#            ]
+#          servers: >
+#            [
+#              {
+#                "id": "github",
+#                "username": "yudady",
+#                "password": "${{ secrets.GITHUB_TOKEN }}"
+#              }
+#            ]
+#
+#        # output_file: .m2/settings.xml  => Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
+#
+#
+#
+#      - name: Publish package
+#        uses: gradle/gradle-build-action@v2
+#        with:
+#          arguments: publish
+#          build-root-directory: ./springboot-devops/devops-02-gradle
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       #######################################
       ######### docker start ################
