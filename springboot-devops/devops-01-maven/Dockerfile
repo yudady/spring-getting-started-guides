@@ -15,5 +15,5 @@ EXPOSE 8080
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
 
-# $ docker build -t yudady/devops-01-maven --progress=plain --build-arg JAR_FILE=build/libs/devops-01-maven-0.0.1-SNAPSHOT.jar .
-# $ docker build -t yudady/devops-01-maven --build-arg JAR_FILE=build/libs/devops-01-maven-0.0.1-SNAPSHOT.jar .
+# $ docker build -t yudady/devops-01-maven --progress=plain --build-arg JAR_FILE=target/devops-01-maven-0.0.1-SNAPSHOT.jar .
+# $ docker build -t yudady/devops-01-maven --build-arg JAR_FILE=target/devops-01-maven-0.0.1-SNAPSHOT.jar .

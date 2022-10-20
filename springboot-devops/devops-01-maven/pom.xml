@@ -34,6 +34,17 @@
 
 	</dependencies>
 
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/yudady/spring-getting-started-guides</url>
+		</repository>
+	</distributionManagement>
+
+
+
 	<build>
 		<plugins>
 			<plugin>

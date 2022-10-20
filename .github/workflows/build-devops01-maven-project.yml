@@ -51,6 +51,21 @@ jobs:
         working-directory: springboot-devops/devops-01-maven
 
 
+
+      #######################################
+      ######### maven deploy ################
+      #######################################
+      - name: create maven-settings
+        uses: s4u/maven-settings-action@v2.7.0
+
+
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
       #######################################
       ######### docker start ################
       #######################################

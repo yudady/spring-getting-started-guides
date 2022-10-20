@@ -17,3 +17,7 @@ ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
 
 # $ docker build -t yudady/devops-02-gradle --progress=plain --build-arg JAR_FILE=build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar .
 # $ docker build -t yudady/devops-02-gradle --build-arg JAR_FILE=build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar .
+
+
+# $ docker build -t ghcr.io/yudady/devops-01-maven --build-arg JAR_FILE=build/libs/devops-02-gradle-0.0.1-SNAPSHOT.jar .
+# $ docker push ghcr.io/yudady/devops-01-maven:latest
