@@ -26,7 +26,7 @@ jobs:
           distribution: temurin
           java-version: 17
           server-id: github
-          settings-path: ${{ github.workspace }}
+          settings-path: ${{ github.workspace }}/springboot-devops/devops-01-maven
 
 #
 #
@@ -47,29 +47,30 @@ jobs:
       #########################
       #########################
       #########################
-      - name: create maven-settings
-        uses: s4u/maven-settings-action@v2.7.0
-        with:
-          githubServer: true
-          servers: |
-            [{
-                "id": "github",
-                "username": "yudady",
-                "password": ${{ secrets.DOCKERHUB_TOKEN }}
-            }]
+#      - name: create maven-settings
+#        uses: s4u/maven-settings-action@v2.7.0
+#        with:
+#          githubServer: true
+#          servers: |
+#            [{
+#                "id": "github",
+#                "username": "yudady",
+#                "password": ${{ secrets.DOCKERHUB_TOKEN }}
+#            }]
             
             
+
+
+      - name: build maven
+        run: mvn package
+        working-directory: springboot-devops/devops-01-maven
+
+
       - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+        run: mvn deploy -s $GITHUB_WORKSPACE/springboot-devops/devops-01-maven/settings.xml
         working-directory: springboot-devops/devops-01-maven
         env:
           GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-
-
-#      - name: deploy to github packages
-#        run: mvn package deploy
-#        working-directory: springboot-devops/devops-01-maven
-
 
 
       #######################################
