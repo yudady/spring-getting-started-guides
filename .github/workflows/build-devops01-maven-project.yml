@@ -83,12 +83,20 @@ jobs:
 
 
       # TODO Publish fial
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
-        working-directory: springboot-devops/devops-01-maven
-        env:
-          USER_NAME: yudady
-          ACCESS_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      # Error:  Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy (default-deploy)
+      # on project devops-01-maven: Failed to retrieve remote metadata io.github.***:devops-01-maven:0.0.1-SNAPSHOT/maven-metadata.xml:
+      # Could not transfer metadata io.github.***:devops-01-maven:0.0.1-SNAPSHOT/maven-metadata.xml from/to
+      # github (https://maven.pkg.github.com/***/spring-getting-started-guides): authentication
+      # failed for https://maven.pkg.github.com/***/spring-getting-started-guides/io/github/***/devops-01-maven/0.0.1-SNAPSHOT/maven-metadata.xml,
+      # status: 401 Unauthorized -> [Help 1]
+
+
+#      - name: Publish to GitHub Packages Apache Maven
+#        run: mvn deploy
+#        working-directory: springboot-devops/devops-01-maven
+#        env:
+#          USER_NAME: yudady
+#          ACCESS_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 
       #######################################
