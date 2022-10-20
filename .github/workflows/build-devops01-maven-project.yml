@@ -57,6 +57,14 @@ jobs:
       #######################################
       - name: create maven-settings
         uses: s4u/maven-settings-action@v2.7.0
+        with:
+          githubServer: true
+          servers: |
+            [{
+                "id": "github",
+                "username": "yudady",
+                "password": ${{ secrets.DOCKERHUB_TOKEN }}
+            }]
 
 
       - name: Publish to GitHub Packages Apache Maven
