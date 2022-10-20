@@ -35,8 +35,15 @@ publishing {
 		}
 	}
 	publications {
-		gpr(MavenPublication) {
-			from(components.java)
+//		gpr(MavenPublication) {
+//			from(components.java)
+//		}
+		mavenJava(MavenPublication) {
+			group 'io.github.yudady'
+			artifactId = project.name
+			version '0.0.1-SNAPSHOT'
+			// bootJar is the default build task configured by Spring Boot
+			artifact bootJar
 		}
 	}
 }
