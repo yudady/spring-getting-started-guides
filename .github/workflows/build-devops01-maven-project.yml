@@ -87,7 +87,8 @@ jobs:
         run: mvn deploy
         working-directory: springboot-devops/devops-01-maven
         env:
-          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          USER_NAME: yudady
+          ACCESS_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 
       #######################################
