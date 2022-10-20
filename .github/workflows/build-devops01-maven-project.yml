@@ -25,17 +25,13 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-          server-id: github
-          settings-path: ${{ github.workspace }}
 
-#
-#
-#
-#      - name: Setup Maven Action
-#        uses: s4u/setup-maven-action@v1.5.0
-#        with:
-#          java-version: 17
-#          maven-version: 3.8.6
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.5.0
+        with:
+          java-version: 17
+          maven-version: 3.8.6
 
 
       - name: change github-action.sh Permission
@@ -47,16 +43,36 @@ jobs:
       #########################
       #########################
       #########################
-#      - name: create maven-settings
-#        uses: s4u/maven-settings-action@v2.7.0
-#        with:
-#          githubServer: true
-#          servers: |
-#            [{
-#                "id": "github",
-#                "username": "yudady",
-#                "password": ${{ secrets.DOCKERHUB_TOKEN }}
-#            }]
+      - name: maven-settings-xml-action
+        uses: whelk-io/maven-settings-xml-action@v20
+        with:
+          repositories: >
+            [
+              {
+                "id": "github",
+                "name": "GitHub OWNER Apache Maven Packages",
+                "url": "https://maven.pkg.github.com/yudady/spring-getting-started-guides",
+                "releases": {
+                  "enabled": "true",
+                  "updatePolicy": "always",
+                  "checksumPolicy": "fail"
+                },
+                "snapshots": {
+                  "enabled": "true",
+                  "updatePolicy": "always",
+                  "checksumPolicy": "fail"
+                }
+              }
+            ]
+          servers: >
+            [
+              {
+                "id": "github",
+                "username": "yudady",
+                "password": "${{ secrets.DOCKERHUB_TOKEN }}"
+              }
+            ]
+          output_file: .m2/settings.xml
             
             
 
