@@ -45,16 +45,6 @@ jobs:
       #########################
       #########################
       #########################
-
-      - name: build maven jar
-        run: mvn package
-        working-directory: springboot-devops/devops-01-maven
-
-
-
-      #######################################
-      ######### maven deploy ################
-      #######################################
       - name: create maven-settings
         uses: s4u/maven-settings-action@v2.7.0
         with:
@@ -65,12 +55,12 @@ jobs:
                 "username": "yudady",
                 "password": ${{ secrets.DOCKERHUB_TOKEN }}
             }]
+            
+            
 
-
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: deploy to github packages
+        run: mvn package deploy
+        working-directory: springboot-devops/devops-01-maven
 
 
 
