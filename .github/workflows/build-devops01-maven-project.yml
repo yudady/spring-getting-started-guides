@@ -68,7 +68,7 @@ jobs:
               {
                 "id": "github",
                 "username": "yudady",
-                "password": "${{ secrets.DOCKERHUB_TOKEN }}"
+                "password": "${{ secrets.GITHUB_TOKEN }}"
               }
             ]
 #          output_file: .m2/settings.xml
@@ -91,12 +91,13 @@ jobs:
       # status: 401 Unauthorized -> [Help 1]
 
 
-#      - name: Publish to GitHub Packages Apache Maven
-#        run: mvn deploy
-#        working-directory: springboot-devops/devops-01-maven
-#        env:
-#          USER_NAME: yudady
-#          ACCESS_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy
+        working-directory: springboot-devops/devops-01-maven
+        env:
+          USER_NAME: yudady
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       #######################################
