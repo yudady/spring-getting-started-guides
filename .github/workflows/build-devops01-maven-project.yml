@@ -43,7 +43,7 @@ jobs:
       #########################
       #########################
       #########################
-      - name: maven-settings-xml-action
+      - name: 創建一個 settings-xml 放在 maven 預設目錄 .m2/settings.xml
         uses: whelk-io/maven-settings-xml-action@v20
         with:
           repositories: >
@@ -71,25 +71,22 @@ jobs:
                 "password": "${{ secrets.GITHUB_TOKEN }}"
               }
             ]
-#          output_file: .m2/settings.xml
-            # Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
-            
-            
+            # output_file: .m2/settings.xml  => Optional String path of to generate settings.xml. By default, ~/.m2/settings.xml is used.
 
+
+      #######################################
+      ######### maven package ################
+      #######################################
 
       - name: maven package
         run: mvn package
         working-directory: springboot-devops/devops-01-maven
 
 
-      # TODO Publish fial
-      # Error:  Failed to execute goal org.apache.maven.plugins:maven-deploy-plugin:2.8.2:deploy (default-deploy)
-      # on project devops-01-maven: Failed to retrieve remote metadata io.github.***:devops-01-maven:0.0.1-SNAPSHOT/maven-metadata.xml:
-      # Could not transfer metadata io.github.***:devops-01-maven:0.0.1-SNAPSHOT/maven-metadata.xml from/to
-      # github (https://maven.pkg.github.com/***/spring-getting-started-guides): authentication
-      # failed for https://maven.pkg.github.com/***/spring-getting-started-guides/io/github/***/devops-01-maven/0.0.1-SNAPSHOT/maven-metadata.xml,
-      # status: 401 Unauthorized -> [Help 1]
 
+      #######################################
+      ######### maven Publish ################
+      #######################################
 
       - name: Publish to GitHub Packages Apache Maven
         run: mvn deploy
