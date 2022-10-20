@@ -10,8 +10,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>spring-getting-started-guides</groupId>
-	<artifactId>devops01maven</artifactId>
+	<groupId>io.github.yudady</groupId>
+	<artifactId>devops-01-maven</artifactId>
 	<version>0.0.1</version>
 
 	<name>devops-01-maven</name>

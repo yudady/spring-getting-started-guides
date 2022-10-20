@@ -77,16 +77,17 @@ jobs:
             
 
 
-      - name: build maven
+      - name: maven package
         run: mvn package
         working-directory: springboot-devops/devops-01-maven
 
 
-      - name: Publish to GitHub Packages Apache Maven
-        run: mvn deploy
-        working-directory: springboot-devops/devops-01-maven
-        env:
-          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+# TODO Publish fial
+#      - name: Publish to GitHub Packages Apache Maven
+#        run: mvn deploy
+#        working-directory: springboot-devops/devops-01-maven
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 
       #######################################
