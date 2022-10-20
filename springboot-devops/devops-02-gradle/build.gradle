@@ -12,6 +12,9 @@ sourceCompatibility = '17'
 repositories {
 	mavenCentral()
 	maven {
+		url = uri("https://yudady.github.io/repo/maven2")
+	}
+	maven {
 		url = uri("https://maven.pkg.github.com/yudady/io.github.yudady")
 		credentials {
 			username = "yudady"
@@ -25,6 +28,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
+	implementation 'io.github.yudady:bilibili-video:0.0.1-SNAPSHOT'
 }
 
 test {
