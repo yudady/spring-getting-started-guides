@@ -115,16 +115,22 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-
+      #######################################
+      ######### push to dockerhub github ####
+      #######################################
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
           context: ./springboot-devops/devops-01-maven
           push: true
-          tags: yudady/devops-01-maven:latest
+          tags: | 
+            yudady/devops-01-maven:latest
+            ghcr.io/yudady/spring-getting-started-guides/devops-01-maven:latest
           build-args: JAR_FILE=./target/devops-01-maven-0.0.1-SNAPSHOT.jar
 
-
+      #######################################
+      ######### slack start ################
+      #######################################
 
       - name: slack report Status
         uses: ravsamhq/notify-slack-action@v2
