@@ -94,7 +94,6 @@ jobs:
         working-directory: springboot-devops/devops-01-maven
         env:
           USER_NAME: yudady
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
