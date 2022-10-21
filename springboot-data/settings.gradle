@@ -2,3 +2,4 @@ rootProject.name = 'springboot-data'
 
 include 'data-01-start'
 include 'data-02-h2-mem'
+include 'data-04-redis'
