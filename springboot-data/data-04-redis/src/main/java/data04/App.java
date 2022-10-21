@@ -36,7 +36,7 @@ public class App implements ApplicationRunner {
             try {
                 Threads.sleepRoughly(Duration.ofSeconds(1));
                 String key = "" + i;
-                stringRedisTemplate.opsForValue().set("data-04-redis-key-" + key, "data-04-redis-value-" + key);
+                stringRedisTemplate.opsForValue().set("data-04-redis:key-" + key, "data-04-redis-value-" + key);
                 System.out.println("key = " + key);
             } catch (Exception e) {
                 LOGGER.error(Exceptions.stackTrace(e));
