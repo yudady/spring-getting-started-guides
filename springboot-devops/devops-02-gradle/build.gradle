@@ -14,13 +14,13 @@ repositories {
 	maven {
 		url = uri("https://yudady.github.io/repo/maven2")
 	}
-	maven {
-		url = uri("https://maven.pkg.github.com/yudady/io.github.yudady")
-		credentials {
-			username = "yudady"
-			password = "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"
-		}
-	}
+//	maven {
+//		url = uri("https://maven.pkg.github.com/yudady/io.github.yudady")
+//		credentials {
+//			username = "yudady"
+//			password = "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"
+//		}
+//	}
 }
 
 dependencies {
@@ -28,7 +28,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	implementation 'io.github.yudady:bilibili-video:0.0.1-SNAPSHOT'
-	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
+//	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 }
 
 test {
