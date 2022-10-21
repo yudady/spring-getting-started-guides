@@ -18,6 +18,9 @@ subprojects {
 
 	repositories {
 		mavenLocal()
+		maven {
+			url = uri("https://yudady.github.io/repo/maven2")
+		}
 		mavenCentral()
 	}
 
@@ -38,6 +41,8 @@ subprojects {
 
 		annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 		annotationProcessor 'org.projectlombok:lombok'
+
+		implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 	}
 
 

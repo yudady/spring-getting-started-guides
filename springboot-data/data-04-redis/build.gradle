@@ -1,14 +1,9 @@
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.apache.commons:commons-lang3:3.12.0'
-	implementation 'redis.clients:jedis' // not support '4.2.3'
-	implementation 'com.google.code.gson:gson:2.9.1'
 
-	implementation 'io.lettuce:lettuce-core'
 
-	implementation 'org.zeroturnaround:gradle-jrebel-plugin'
-
+//	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
