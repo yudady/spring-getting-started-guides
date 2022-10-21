@@ -18,7 +18,7 @@ repositories {
 		url = uri("https://maven.pkg.github.com/yudady/io.github.yudady")
 		credentials {
 			username = "yudady"
-			password = "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"
+			password = "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"
 		}
 	}
 }
