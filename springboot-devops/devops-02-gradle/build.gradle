@@ -18,7 +18,7 @@ repositories {
 		url = uri("https://maven.pkg.github.com/yudady/io.github.yudady")
 		credentials {
 			username = "yudady"
-			password = "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"
+			password = "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"
 		}
 	}
 }
@@ -27,8 +27,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 	implementation 'io.github.yudady:bilibili-video:0.0.1-SNAPSHOT'
+	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 }
 
 test {
