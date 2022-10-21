@@ -3,8 +3,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
 
-//	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
-
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

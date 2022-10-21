@@ -19,7 +19,8 @@ subprojects {
 	repositories {
 		mavenLocal()
 		maven {
-			url = uri("https://yudady.github.io/repo/maven2")
+//			url = uri("https://yudady.github.io/repo/maven2")
+			url = "file:///d:/tommy/github-repo/yudady-source/repo/maven2"
 		}
 		mavenCentral()
 	}
