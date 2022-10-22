@@ -1,6 +1,7 @@
 package data04.redis03;
 
 import io.github.yudady.util.Strings;
+import java.util.stream.IntStream;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
@@ -32,11 +33,15 @@ class RedisZSetTest {
     @Test
     void test02_set() {
         long now = System.nanoTime();
-        String redisKey = Strings.format("redis-set-key:{}", now);
-        String redisValue = Strings.format("redis-set-value:{}", now);
+        String redisKey = Strings.format("redis-zset-key:{}", now);
+        String scoresKey = Strings.format("redis-scores-key:{}", now);
 
         BoundZSetOperations<String, Object> zSetOps = redisTemplate.boundZSetOps(redisKey);
-        zSetOps.add(redisValue, 100);
+        zSetOps.add(scoresKey, 0);
+
+        // [1,11) is 55 , closed=false
+        IntStream.range(1, 11).forEach(inc -> zSetOps.incrementScore(scoresKey, inc));
+
     }
 
 }
