@@ -1,3 +1,4 @@
 rootProject.name = 'data-04-redis'
 
-include 'redis01'
+include 'redis01-lettuce'
+include 'redis02-jedis'

@@ -1,4 +1,4 @@
-package data04.redis01;
+package data04.redis02;
 
 import io.github.yudady.spring.StringBeans;
 import io.github.yudady.util.Exceptions;
@@ -18,18 +18,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 @SpringBootApplication
-public class App implements ApplicationRunner, CommandLineRunner {
+public class Redis02 implements ApplicationRunner, CommandLineRunner {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(App.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(Redis02.class);
 
     @Autowired
     ApplicationContext applicationContext;
     @Autowired
     StringRedisTemplate stringRedisTemplate;
 
-
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(Redis02.class, args);
     }
 
     @Override
@@ -45,7 +44,6 @@ public class App implements ApplicationRunner, CommandLineRunner {
     @Override
     public void run(String... args) {
         //2、查看容器里面的组件
-
         for (int i = 0; i < 10; i++) {
             try {
                 Threads.sleepRoughly(Duration.ofSeconds(1));
@@ -56,5 +54,6 @@ public class App implements ApplicationRunner, CommandLineRunner {
             }
 
         }
+
     }
 }
