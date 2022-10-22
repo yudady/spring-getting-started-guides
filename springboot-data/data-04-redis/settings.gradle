@@ -1,0 +1,3 @@
+rootProject.name = 'data-04-redis'
+
+include 'redis01'
