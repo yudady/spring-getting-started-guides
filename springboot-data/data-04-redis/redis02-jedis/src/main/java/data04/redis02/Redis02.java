@@ -2,9 +2,11 @@ package data04.redis02;
 
 import io.github.yudady.spring.StringBeans;
 import io.github.yudady.util.Exceptions;
+import io.github.yudady.util.Lists;
 import io.github.yudady.util.Strings;
 import io.github.yudady.util.Threads;
 import java.time.Duration;
+import java.util.List;
 import java.util.Locale;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,17 +45,19 @@ public class Redis02 implements ApplicationRunner, CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        //2、查看容器里面的组件
+        List<String> keys = Lists.newArrayList();
         for (int i = 0; i < 10; i++) {
             try {
-                Threads.sleepRoughly(Duration.ofSeconds(1));
-                String key = "" + i;
-                stringRedisTemplate.opsForValue().set("data-04-redis:key-" + key, "data-04-redis-value-" + key);
+                String key = "redis02:key-" + i;
+                keys.add(key);
+                stringRedisTemplate.opsForValue().set(key, "redis02-value-" + i);
             } catch (Exception e) {
                 LOGGER.error(Exceptions.stackTrace(e));
             }
 
         }
+
+        keys.forEach(key -> System.out.println(stringRedisTemplate.opsForValue().get(key)));
 
     }
 }
