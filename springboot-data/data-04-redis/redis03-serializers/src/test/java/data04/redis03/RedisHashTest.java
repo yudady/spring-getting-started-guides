@@ -8,7 +8,7 @@ import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
-import org.springframework.data.redis.core.BoundValueOperations;
+import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 
 
@@ -19,7 +19,7 @@ import static org.hamcrest.Matchers.nullValue;
 @SpringBootTest(classes = data04.redis03.config.Config.class)
 @EnabledOnOs(OS.WINDOWS)
 @TestMethodOrder(MethodOrderer.MethodName.class)
-class RedisStringTest {
+class RedisHashTest {
     @SpyBean
     RedisTemplate<String, Object> redisTemplate;
 
@@ -32,13 +32,13 @@ class RedisStringTest {
     @Test
     void test02_set() {
         long now = System.nanoTime();
-        String redisKey = Strings.format("redis-string-key:{}", now);
-        String redisValue = Strings.format("redis-string-value:{}", now);
+        String redisKey = Strings.format("redis-hash:{}", now);
+        String redisHashKey = Strings.format("redis-hash-key:{}", now);
+        String redisHashValue = Strings.format("redis-hash-value:{}", now);
 
-        BoundValueOperations<String, Object> stringOps = redisTemplate.boundValueOps(redisKey);
-        stringOps.set(redisValue);
+        BoundHashOperations<String, Object, Object> hashOps = redisTemplate.boundHashOps(redisKey);
+        hashOps.put(redisHashKey, redisHashValue);
 
-        assertThat(redisTemplate.opsForValue().get(redisKey), equalTo(redisValue));
     }
 
 
