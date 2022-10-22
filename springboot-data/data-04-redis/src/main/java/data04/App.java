@@ -8,6 +8,7 @@ import java.time.Duration;
 import io.github.yudady.util.Threads;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -41,7 +42,11 @@ public class App implements ApplicationRunner, CommandLineRunner {
     @Override
     public void run(ApplicationArguments args) {
         StringBeans.getBeanDefinitions(applicationContext)
-            .forEach(entry -> System.out.println(Strings.format("{} : {}", entry.getKey(), entry.getValue().getClass().getName())));
+            .stream().filter(entry -> entry.getKey().toLowerCase(Locale.ROOT).contains("redis")
+                || entry.getValue().toString().toLowerCase(Locale.ROOT).contains("redis"))
+            .forEach(entry -> System.out.println(
+                Strings.format("{} : {}", entry.getKey(), entry.getValue().getClass().getName()))
+            );
     }
 
     @Override
@@ -53,7 +58,6 @@ public class App implements ApplicationRunner, CommandLineRunner {
                 Threads.sleepRoughly(Duration.ofSeconds(1));
                 String key = "" + i;
                 stringRedisTemplate.opsForValue().set("data-04-redis:key-" + key, "data-04-redis-value-" + key);
-                System.out.println("key = " + key);
             } catch (Exception e) {
                 LOGGER.error(Exceptions.stackTrace(e));
             }
