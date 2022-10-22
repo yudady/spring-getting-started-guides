@@ -38,17 +38,16 @@ subprojects {
 	dependencies {
 		implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 		implementation 'org.springframework.boot:spring-boot-starter-web'
-
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
 		implementation 'org.springframework.boot:spring-boot-devtools'
 		implementation 'org.springframework.boot:spring-boot-configuration-processor'
 		implementation 'org.projectlombok:lombok'
+		implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 
 		annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 		annotationProcessor 'org.projectlombok:lombok'
 
-		implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testImplementation 'org.hamcrest:hamcrest-library'
 	}
 
 
@@ -77,5 +76,8 @@ subprojects {
 		options.encoding = 'UTF-8'
 	}
 
+	test {
+		useJUnitPlatform()
+	}
 
 }
