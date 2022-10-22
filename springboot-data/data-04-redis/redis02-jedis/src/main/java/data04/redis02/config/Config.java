@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
+/**
+ * {@link org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration }
+ */
 @Configuration
 public class Config {
 
