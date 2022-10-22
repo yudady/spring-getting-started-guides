@@ -17,6 +17,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
 
 @SpringBootApplication
@@ -60,6 +61,11 @@ public class Redis01 implements ApplicationRunner, CommandLineRunner {
         }
 
 
-        keys.forEach(key -> System.out.println(stringRedisTemplate.opsForValue().get(key)));
+        keys.forEach(key -> {
+            System.out.println(stringRedisTemplate.opsForValue().get(key));
+            BoundValueOperations<String, String> bound = stringRedisTemplate.boundValueOps(key);
+            System.out.println(bound.getAndDelete());
+            System.out.println(stringRedisTemplate.opsForValue().get(key));
+        });
     }
 }
