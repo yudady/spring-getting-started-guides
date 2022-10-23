@@ -1,11 +1,9 @@
 package data04.redis01;
 
-import io.github.yudady.spring.StringBeans;
+import io.github.yudady.spring.SpringBeans;
 import io.github.yudady.util.Exceptions;
 import io.github.yudady.util.Lists;
 import io.github.yudady.util.Strings;
-import io.github.yudady.util.Threads;
-import java.time.Duration;
 import java.util.List;
 import java.util.Locale;
 import org.slf4j.Logger;
@@ -37,7 +35,7 @@ public class Redis01 implements ApplicationRunner, CommandLineRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        StringBeans.getBeanDefinitions(applicationContext)
+        SpringBeans.getBeanDefinitions(applicationContext)
             .stream().filter(entry -> entry.getKey().toLowerCase(Locale.ROOT).contains("redis")
                 || entry.getValue().toString().toLowerCase(Locale.ROOT).contains("redis"))
             .forEach(entry -> System.out.println(

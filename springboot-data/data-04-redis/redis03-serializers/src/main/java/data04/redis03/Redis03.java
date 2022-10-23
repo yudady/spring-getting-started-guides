@@ -1,7 +1,7 @@
 package data04.redis03;
 
 import data04.redis03.model.User;
-import io.github.yudady.spring.StringBeans;
+import io.github.yudady.spring.SpringBeans;
 import io.github.yudady.util.Strings;
 import java.time.Duration;
 import java.util.Locale;
@@ -37,7 +37,7 @@ public class Redis03 implements ApplicationRunner, CommandLineRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        StringBeans.getBeanDefinitions(applicationContext)
+        SpringBeans.getBeanDefinitions(applicationContext)
             .stream().filter(entry -> entry.getKey().toLowerCase(Locale.ROOT).contains("redis")
                 || entry.getValue().toString().toLowerCase(Locale.ROOT).contains("redis"))
             .forEach(entry -> System.out.println(
