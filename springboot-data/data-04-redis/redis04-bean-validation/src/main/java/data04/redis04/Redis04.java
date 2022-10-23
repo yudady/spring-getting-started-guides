@@ -69,15 +69,4 @@ public class Redis04 implements ApplicationRunner, CommandLineRunner {
 
     }
 
-    public static <T> T mapToBean(Map<String, ?> map, Class<T> clazz) {
-
-        try {
-            T bean = clazz.getDeclaredConstructor().newInstance();
-            BeanMap beanMap = BeanMap.create(bean);
-            beanMap.putAll(map);
-            return bean;
-        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException | IllegalAccessException e) {
-            return null;
-        }
-    }
 }
