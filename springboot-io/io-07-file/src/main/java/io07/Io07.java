@@ -1,11 +1,7 @@
 package io07;
 
 
-import java.net.URI;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
+import io07.service.ReadFileList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +14,9 @@ public class Io07 implements CommandLineRunner {
     @Autowired
     ApplicationContext context;
 
+    @Autowired
+    ReadFileList readFileList;
+
     public static void main(String[] args) {
         SpringApplication.run(Io07.class, args);
     }
@@ -25,19 +24,12 @@ public class Io07 implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        URL resource = Thread.currentThread().getContextClassLoader().getResource("conflict_names.csv");
-        assert resource != null;
-        URI uri = resource.toURI();
 
-
-        Path path = Path.of(uri);
-
-        // Path path = .
-        List<String> strings = Files.readAllLines(path);
-
-        strings.forEach(System.out::println);
-
+        readFileList.readAllLines();
+        readFileList.fileFolderList();
+        readFileList.walkPathDepth1();
 
     }
+
 
 }
