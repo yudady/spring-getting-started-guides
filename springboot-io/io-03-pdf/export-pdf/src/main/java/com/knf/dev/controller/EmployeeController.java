@@ -1,4 +1,4 @@
-package com.knf.dev.controller;
+package web05.controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
