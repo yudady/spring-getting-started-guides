@@ -19,6 +19,9 @@ subprojects {
 	repositories {
 		mavenLocal()
 		mavenCentral()
+		maven {
+			url = uri("https://yudady.github.io/repo/maven2")
+		}
 	}
 
 	apply plugin: "java"
