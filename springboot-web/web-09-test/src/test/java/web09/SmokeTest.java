@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import web09.HomeController;
+import web09.controller.HomeController;
 
 @SpringBootTest
 public class SmokeTest {

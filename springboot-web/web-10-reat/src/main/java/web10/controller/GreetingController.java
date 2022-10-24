@@ -1,4 +1,4 @@
-package com.example.restservice;
+package web10.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.GetMapping;

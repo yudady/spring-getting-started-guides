@@ -1,4 +1,4 @@
-package com.example.restservice;
+package web10.controller;
 
 public class Greeting {
 

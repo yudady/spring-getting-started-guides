@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import web09.GreetingController;
-import web09.GreetingService;
+import web09.controller.GreetingController;
+import web09.service.GreetingService;
 
 @WebMvcTest(GreetingController.class)
 public class WebMockTest {
