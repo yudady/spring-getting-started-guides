@@ -1,7 +1,7 @@
-package io.github.yudady;
+package env01;
 
 
-import io.github.yudady.bean.User;
+import env01.bean.User;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;

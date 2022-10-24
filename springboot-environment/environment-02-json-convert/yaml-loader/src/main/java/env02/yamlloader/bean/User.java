@@ -1,21 +1,17 @@
-package io.github.yudady.bean;
+package env02.yamlloader.bean;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ToString
 @EqualsAndHashCode
-@Configuration(proxyBeanMethods = true)
+@ConfigurationProperties("my")
 public class User {
 
-	@Value("${my.name}")
 	public String name;
 
-	@Value("${my.age}")
 	public Integer age;
-
 
 	public String getName() {
 		return name;

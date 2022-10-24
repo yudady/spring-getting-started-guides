@@ -1,6 +1,6 @@
-package io.github.yudady.config;
+package env02.yamlloader.config;
 
-import io.github.yudady.bean.User;
+import env02.yamlloader.bean.User;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 

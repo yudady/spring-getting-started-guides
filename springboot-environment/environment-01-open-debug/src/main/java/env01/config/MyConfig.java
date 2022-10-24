@@ -1,7 +1,7 @@
-package io.github.yudady.config;
+package env01.config;
 
 
-import io.github.yudady.bean.User;
+import env01.bean.User;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

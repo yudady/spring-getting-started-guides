@@ -1,4 +1,4 @@
-package io.github.yudady.config;
+package env02.yamlloader.config;
 
 import lombok.extern.slf4j.Slf4j;
 

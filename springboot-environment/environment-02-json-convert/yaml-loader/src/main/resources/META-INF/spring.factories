@@ -1,1 +1,1 @@
-org.springframework.boot.env.PropertySourceLoader=io.github.yudady.config.JsonPropertySourceLoader
+org.springframework.boot.env.PropertySourceLoader=env02.yamlloader.config.JsonPropertySourceLoader
