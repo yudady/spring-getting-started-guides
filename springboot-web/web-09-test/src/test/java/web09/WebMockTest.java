@@ -1,4 +1,4 @@
-package com.example.testingweb;
+package web09;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+import web09.GreetingController;
+import web09.GreetingService;
 
 @WebMvcTest(GreetingController.class)
 public class WebMockTest {

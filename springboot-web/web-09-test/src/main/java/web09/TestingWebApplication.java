@@ -1,4 +1,4 @@
-package com.example.testingweb;
+package web09;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

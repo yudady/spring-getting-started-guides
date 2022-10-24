@@ -8,11 +8,11 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>03-gs-testing-web-main</artifactId>
+	<groupId>io.github.yudady</groupId>
+	<artifactId>web-09-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>03-gs-testing-web-main</name>
+	<name>web-09-test</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
