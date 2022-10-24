@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.consumingrest;
+package web11;
 
 import org.junit.jupiter.api.Test;
 

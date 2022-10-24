@@ -1,4 +1,4 @@
-package com.example.consumingrest;
+package web11.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
