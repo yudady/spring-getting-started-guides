@@ -16,9 +16,14 @@ apply plugin: 'maven-publish'
 apply plugin: "org.springframework.boot"
 apply plugin: 'io.spring.dependency-management'
 
+rootProject.ext {
+    projectGroup = 'io.github.yudady'
+    projectVersion = '0.0.2-SNAPSHOT'
+}
 
-group = 'io.github.yudady'
-version = '0.0.2-SNAPSHOT'
+
+group = ext.projectGroup
+version = ext.projectVersion
 sourceCompatibility = '17'
 
 repositories {
@@ -41,30 +46,20 @@ test {
 
 
 publishing {
-	publications {
-		maven2LocalRepo(MavenPublication) {
-			groupId = 'io.github.yudady'
-			version = '0.0.2-SNAPSHOT'
+    publications {
+        maven2LocalRepo(MavenPublication) {
+            groupId = rootProject.ext.projectGroup
+            version = rootProject.ext.projectVersion
+            from components.java
+        }
+    }
 
-			from components.java
-		}
-	}
-
-	repositories {
-		maven {
+    repositories {
+        maven {
             url = "file:///d:/tommy/github-repo/yudady-source/repo/maven2"
-		}
-	}
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
 
 
 //
