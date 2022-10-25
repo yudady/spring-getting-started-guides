@@ -18,7 +18,7 @@ apply plugin: 'io.spring.dependency-management'
 
 rootProject.ext {
     projectGroup = 'io.github.yudady'
-    projectVersion = '0.0.2-SNAPSHOT'
+    projectVersion = '0.0.3-SNAPSHOT'
 }
 
 
@@ -35,8 +35,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
 
 
@@ -59,7 +58,7 @@ publishing {
 
     repositories {
         maven {
-            url = "file:///d:/tommy/github-repo/yudady-source/repo/maven2"
+            url = "file:///d:/tommy/github-repo/yudady/repo/maven2"
         }
     }
 }
