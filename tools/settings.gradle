@@ -1,4 +1,5 @@
 rootProject.name = 'tools'
 
+include 'a-test'
 include 'tools-spring-web'
 include 'tools-utils'
