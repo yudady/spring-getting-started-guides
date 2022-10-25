@@ -18,7 +18,7 @@ apply plugin: 'io.spring.dependency-management'
 
 rootProject.ext {
     projectGroup = 'io.github.yudady'
-    projectVersion = '0.0.3-SNAPSHOT'
+    projectVersion = '0.0.1-SNAPSHOT'
 }
 
 
