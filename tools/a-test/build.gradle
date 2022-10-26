@@ -28,6 +28,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+
 publishing {
     publications {
         // bootJar is the default build task configured by Spring Boot
