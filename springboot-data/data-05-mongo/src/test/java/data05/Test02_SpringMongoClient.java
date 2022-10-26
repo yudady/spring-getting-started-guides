@@ -17,7 +17,7 @@ class Test02_SpringMongoClient {
 	MongoClient mongoClient;
 
 	@Test
-	void initMongoClients() {
+	void test() {
 		MongoIterable<String> strings = mongoClient.listDatabaseNames();
 		for (String mongo : strings) {
 			System.out.println("mongo = " + mongo);

@@ -11,7 +11,7 @@ class Test01_MongoClients {
 
 
 	@Test
-	void initMongoClients() {
+	void test() {
 		MongoClient mongoClient = MongoClients.create("mongodb://test:test@localhost:27017/test");
 
 		MongoIterable<String> strings = mongoClient.listDatabaseNames();

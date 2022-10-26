@@ -1,30 +1,26 @@
 package data05.mode;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Version;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Person {
 
-    private String id;
-    private String name;
-    private int age;
+    @Id
+    public Long id;
+    public String name;
+    public int age;
+    @Version
+    public Long version;
 
-    public Person(String name, int age) {
+    public Person() {
+    }
+
+    public Person(Long id, String name, int age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person [id=" + id + ", name=" + name + ", age=" + age + "]";
-    }
 }
