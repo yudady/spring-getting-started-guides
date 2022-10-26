@@ -12,9 +12,10 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class ConsumerRestTemplateService {
 
+
 	public Map<Integer, ConsumerUser> getUser() {
 
-		RestTemplate restTemplate = new RestTemplate();
+		RestTemplate restTemplate = new RestTemplate(); // ! check  inject
 		ResponseEntity<Map<Integer, ConsumerUser>> response = restTemplate.exchange("http://localhost:8080/getUser",
 			HttpMethod.GET, null, new ParameterizedTypeReference<Map<Integer, ConsumerUser>>() {
 			});

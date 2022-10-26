@@ -1,7 +1,6 @@
 package web06.consumer.controller;
 
 
-import java.net.URISyntaxException;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,14 +19,14 @@ public class ConsumerController {
     @Autowired
     ConsumerRestTemplateService service;
 
-    @GetMapping(value = "/restTemplateGetTest")
+    @GetMapping(value = "/")
     public ResponseEntity<Map<Integer, ConsumerUser>> listAllUsers() {
         return new ResponseEntity<>(service.getUser(), HttpStatus.OK);
     }
 
 
-    @PostMapping(value = "/restTemplatePostTest")
-    public ResponseEntity<String> deleteUser(@RequestBody ConsumerKey key) throws URISyntaxException {
+    @PostMapping(value = "/")
+    public ResponseEntity<String> deleteUser(@RequestBody ConsumerKey key) {
 
         return new ResponseEntity<>(service.deleteuser(key.getKey()), HttpStatus.OK);
     }

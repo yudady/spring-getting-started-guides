@@ -1,9 +1,9 @@
 ### 9091 -> 9094
-GET http://localhost:9091/restTemplateGetTest
+GET http://localhost:9001
 
 
 ###
-POST http://localhost:9091/restTemplatePostTest
+POST http://localhost:9001
 Content-Type: application/json
 
 {
