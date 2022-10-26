@@ -1,8 +1,8 @@
-package data04.redis04;
+package data05.redis04;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import data04.redis04.model.User;
+import data05.redis04.model.User;
 import io.github.yudady.spring.SpringBeans;
 import io.github.yudady.util.Strings;
 import java.time.Duration;

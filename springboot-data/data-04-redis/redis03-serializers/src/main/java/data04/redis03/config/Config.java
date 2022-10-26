@@ -1,4 +1,4 @@
-package data04.redis03.config;
+package data05.redis03.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

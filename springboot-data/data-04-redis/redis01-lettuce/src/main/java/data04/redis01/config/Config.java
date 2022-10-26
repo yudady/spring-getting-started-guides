@@ -1,4 +1,4 @@
-package data04.redis01.config;
+package data05.redis01.config;
 
 /**
  * {@link org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration }

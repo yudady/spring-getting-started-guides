@@ -1,4 +1,4 @@
-package data04.redis03.model;
+package data05.redis03.model;
 
 public class User {
 

@@ -1,4 +1,4 @@
-package data04.redis03;
+package data05.redis03;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;

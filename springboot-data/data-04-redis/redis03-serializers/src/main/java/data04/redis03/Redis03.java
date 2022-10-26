@@ -1,6 +1,6 @@
-package data04.redis03;
+package data05.redis03;
 
-import data04.redis03.model.User;
+import data05.redis03.model.User;
 import io.github.yudady.spring.SpringBeans;
 import io.github.yudady.util.Strings;
 import java.time.Duration;

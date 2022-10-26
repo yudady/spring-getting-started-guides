@@ -1,4 +1,4 @@
-package data04.redis03;
+package data05.redis03;
 
 import io.github.yudady.util.Strings;
 import org.junit.jupiter.api.MethodOrderer;
@@ -16,7 +16,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.nullValue;
 
-@SpringBootTest(classes = data04.redis03.config.Config.class)
+@SpringBootTest(classes = data05.redis03.config.Config.class)
 @EnabledOnOs(OS.WINDOWS)
 @TestMethodOrder(MethodOrderer.MethodName.class)
 class RedisSetTest {

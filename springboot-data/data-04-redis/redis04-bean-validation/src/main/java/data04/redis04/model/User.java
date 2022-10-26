@@ -1,4 +1,4 @@
-package data04.redis04.model;
+package data05.redis04.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.beans.BeanProperty;

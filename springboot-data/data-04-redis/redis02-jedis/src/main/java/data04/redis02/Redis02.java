@@ -1,4 +1,4 @@
-package data04.redis02;
+package data05.redis02;
 
 import io.github.yudady.spring.SpringBeans;
 import io.github.yudady.util.Exceptions;
