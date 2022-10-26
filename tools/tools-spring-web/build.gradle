@@ -22,3 +22,18 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+
+publishing {
+    publications {
+        // bootJar is the default build task configured by Spring Boot
+        mavenJava(MavenPublication) {
+            group rootProject.ext.projectGroup
+            artifactId = project.name
+            version rootProject.ext.projectVersion
+            // bootJar is the default build task configured by Spring Boot
+            artifact bootJar
+        }
+    }
+}
+
+

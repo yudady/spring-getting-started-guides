@@ -16,9 +16,9 @@ apply plugin: 'io.spring.dependency-management'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
     implementation 'io.github.yudady:tools-utils:0.0.1-SNAPSHOT'
-
 
     implementation platform("com.google.cloud:libraries-bom:20.6.0")
     implementation 'com.google.cloud:google-cloud-kms'
@@ -27,4 +27,18 @@ dependencies {
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+publishing {
+    publications {
+        // bootJar is the default build task configured by Spring Boot
+        mavenJava(MavenPublication) {
+            group rootProject.ext.projectGroup
+            artifactId = project.name
+            version rootProject.ext.projectVersion
+            // bootJar is the default build task configured by Spring Boot
+            artifact bootJar
+        }
+    }
+}
+
 

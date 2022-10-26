@@ -74,6 +74,10 @@ subprojects {
         options.encoding = 'UTF-8'
     }
 
+    javadoc {
+        options.encoding = 'UTF-8'
+    }
+
     processResources {
         expand(project.properties)
     }
