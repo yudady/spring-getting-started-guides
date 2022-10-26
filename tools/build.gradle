@@ -39,27 +39,27 @@ subprojects {
 
             mavenJava(MavenPublication) {
                 //指定group/artifact/version信息
-				group rootProject.ext.projectGroup
-				artifactId = project.name
-				version rootProject.ext.projectVersion
+                group rootProject.ext.projectGroup
+                artifactId = project.name
+                version rootProject.ext.projectVersion
 
                 // components.java jar包
                 // components.web war包
                 from components.java
 
                 // 增加 sourcesJar、javadocJar 任务
-//                artifact sourcesJar
-//                artifact javadocJar
+                // artifact sourcesJar
+                // artifact javadocJar
             }
 
             // bootJar is the default build task configured by Spring Boot
-//			mavenJava(MavenPublication) {
-//				group rootProject.ext.projectGroup
-//				artifactId = project.name
-//				version rootProject.ext.projectVersion
-//				// bootJar is the default build task configured by Spring Boot
-//				artifact bootJar
-//			}
+            //	mavenJava(MavenPublication) {
+            //		group rootProject.ext.projectGroup
+            //		artifactId = project.name
+            //		version rootProject.ext.projectVersion
+            //		// bootJar is the default build task configured by Spring Boot
+            //		artifact bootJar
+            //	}
         }
 
         repositories {
