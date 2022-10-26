@@ -12,3 +12,6 @@
 
 
 rename client2server
+
+
+TODO maven project
