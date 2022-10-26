@@ -15,7 +15,7 @@ public class ConsumerRestTemplateService {
 	public Map<Integer, ConsumerUser> getUser() {
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<Map<Integer, ConsumerUser>> response = restTemplate.exchange("http://localhost:9094/getUser",
+		ResponseEntity<Map<Integer, ConsumerUser>> response = restTemplate.exchange("http://localhost:8080/getUser",
 			HttpMethod.GET, null, new ParameterizedTypeReference<Map<Integer, ConsumerUser>>() {
 			});
 		Map<Integer, ConsumerUser> users = response.getBody();
