@@ -10,27 +10,39 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import web06.producer.model.ProducerKey;
-import web06.producer.model.ProducerUser;
-import web06.producer.service.ProducerUserService;
+import web06.producer.model.UserServer;
+import web06.producer.service.UserService;
 
 @RestController
 @Slf4j
-public class ProducerController {
+public class UserController {
 
     @Autowired
-    ProducerUserService service;
+    UserService service;
 
     @GetMapping(value = "/getUser")
-    public ResponseEntity<Map<Integer, ProducerUser>> listAllUsers() {
+    public ResponseEntity<Map<Integer, UserServer>> listAllUsers() {
         log.info("restemplate-producer getUser");
         return new ResponseEntity<>(service.getUser(), HttpStatus.OK);
     }
 
     @PostMapping(value = "/deleteUser")
-    public ResponseEntity<Map<Integer, ProducerUser>> deleteUser(@RequestBody ProducerKey key) {
+    public ResponseEntity<Map<Integer, UserServer>> deleteUser(@RequestBody UserKey key) {
         log.info("restemplate-producer deleteUser");
         return new ResponseEntity<>(service.deleteuser(key.getKey()), HttpStatus.OK);
+    }
+
+    static class UserKey {
+        private Integer key;
+
+        public Integer getKey() {
+            return key;
+        }
+
+        public void setKey(Integer key) {
+            this.key = key;
+        }
+
     }
 
 }
