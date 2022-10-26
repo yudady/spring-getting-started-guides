@@ -48,8 +48,8 @@ subprojects {
                 from components.java
 
                 // 增加 sourcesJar、javadocJar 任务
-                artifact sourcesJar
-                artifact javadocJar
+//                artifact sourcesJar
+//                artifact javadocJar
             }
 
             // bootJar is the default build task configured by Spring Boot
