@@ -1,21 +1,8 @@
-// https://plugins.gradle.org/plugin/org.springframework.boot
-buildscript {
-	repositories {
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
-	}
-	dependencies {
-		// 用來控制 apply plugin: "org.springframework.boot" + apply plugin: 'io.spring.dependency-management' 的版本
-		classpath "org.springframework.boot:spring-boot-gradle-plugin:2.7.4"
-	}
-}
-
 apply plugin: "java"
 
 rootProject.ext {
-	projectGroup = 'io.github.yudady'
-	projectVersion = '0.0.1-SNAPSHOT'
+    projectGroup = 'io.github.yudady'
+    projectVersion = '0.0.2-SNAPSHOT'
 }
 
 
@@ -25,58 +12,73 @@ sourceCompatibility = '17'
 
 subprojects {
 
-	repositories {
-		mavenLocal()
-		mavenCentral()
-		maven {
-			url = uri("https://yudady.github.io/repo/maven2")
-		}
-	}
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url = uri("https://yudady.github.io/repo/maven2")
+        }
+    }
 
-	apply plugin: "java"
-	apply plugin: 'maven-publish'
-	apply plugin: "org.springframework.boot"
-	apply plugin: 'io.spring.dependency-management'
+    apply plugin: "java"
+    apply plugin: "java-library"
+    apply plugin: 'maven-publish'
 
-	java {
-		withJavadocJar()
-		withSourcesJar()
-	}
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
 
-	dependencies {
+    dependencies {
 
-	}
+    }
 
 
-	publishing {
-		publications {
-			// bootJar is the default build task configured by Spring Boot
-			mavenJava(MavenPublication) {
+    publishing {
+        publications {
+
+            mavenJava(MavenPublication) {
+                //指定group/artifact/version信息
 				group rootProject.ext.projectGroup
 				artifactId = project.name
 				version rootProject.ext.projectVersion
-				// bootJar is the default build task configured by Spring Boot
-				artifact bootJar
-			}
-		}
 
-		repositories {
-			maven {
-				url = "file:///d:/tommy/github-repo/yudady/repo/maven2"
-			}
-		}
-	}
+                // components.java jar包
+                // components.web war包
+                from components.java
+
+                // 增加 sourcesJar、javadocJar 任务
+                artifact sourcesJar
+                artifact javadocJar
+            }
+
+            // bootJar is the default build task configured by Spring Boot
+//			mavenJava(MavenPublication) {
+//				group rootProject.ext.projectGroup
+//				artifactId = project.name
+//				version rootProject.ext.projectVersion
+//				// bootJar is the default build task configured by Spring Boot
+//				artifact bootJar
+//			}
+        }
+
+        repositories {
+            maven {
+                url = "file:///d:/tommy/github-repo/yudady/repo/maven2"
+            }
+        }
+    }
 
 
-	tasks.withType(JavaCompile) {
-		options.encoding = 'UTF-8'
-	}
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
 
-	processResources {
-		expand(project.properties)
-	}
+    processResources {
+        expand(project.properties)
+    }
 
-	test {
-		useJUnitPlatform()
-	}
+    test {
+        useJUnitPlatform()
+    }
 }
