@@ -1,9 +1,22 @@
-plugins {
-	id 'org.springframework.boot' version '2.5.2'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
-	id("maven-publish")
+// https://plugins.gradle.org/plugin/org.springframework.boot
+buildscript {
+	repositories {
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		// 用來控制 apply plugin: "org.springframework.boot" + apply plugin: 'io.spring.dependency-management' 的版本
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:2.7.4"
+	}
 }
+
+
+apply plugin: "java"
+apply plugin: "java-library"
+apply plugin: 'maven-publish'
+apply plugin: "org.springframework.boot"
+apply plugin: 'io.spring.dependency-management'
 
 group = 'io.github.yudady'
 version = '0.0.1-SNAPSHOT'
@@ -27,8 +40,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation 'io.github.yudady:bilibili-video:0.0.1-SNAPSHOT'
-//	implementation 'io.github.yudady:utils:0.0.1-SNAPSHOT'
 }
 
 test {
