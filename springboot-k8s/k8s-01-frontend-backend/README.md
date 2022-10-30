@@ -5,11 +5,16 @@
 
 ## TODO
 
+- [ ] fix code
+- [ ] create api-local.http for test
 - [ ] spring properties
+- [ ] create Dockerfile
 - [ ] docker image environment
-- [ ] docker-compose
-- [ ] github action
+- [ ] docker-compose override properties
+- [ ] create api-docker-compose.http for test
+- [ ] github action build docker image than push to docker hub
 - [ ] k8s env
+- [ ] create api-k8s.http for test
 
 
 
