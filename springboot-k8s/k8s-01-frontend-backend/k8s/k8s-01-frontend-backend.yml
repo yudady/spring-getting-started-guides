@@ -1,0 +1,99 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  dp-k8s01-frontend
+  labels:
+    type: dp-k8s01-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: k8s01-frontend
+  template:
+    metadata:
+      labels:
+        type: k8s01-frontend
+    spec:
+      containers:
+        - name: k8s01-frontend
+          image: yudady/k8s01-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: BACKEND_URL
+              value: "http://svc-k8s01-backend:8080"
+            - name: SERVER_PORT
+              value: "8080"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  dp-k8s01-backend
+  labels:
+    type: dp-k8s01-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: k8s01-backend
+  template:
+    metadata:
+      labels:
+        type: k8s01-backend
+    spec:
+      containers:
+        - name: k8s01-backend
+          image: yudady/k8s01-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SERVER_PORT
+              value: "8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-k8s01-frontend
+spec:
+  selector:
+    type: k8s01-frontend
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-k8s01-backend
+spec:
+  selector:
+    type: k8s01-backend
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ing-k8s-01-frontend-backend
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: www.yudady.ml
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-k8s01-frontend
+                port:
+                  number: 80
