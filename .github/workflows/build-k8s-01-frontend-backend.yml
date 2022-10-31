@@ -1,0 +1,93 @@
+name: devops-01-maven
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'springboot-k8s/k8s-01-frontend-backend/**'
+      - '.github/workflows/build-k8s-01-frontend-backend.yml'
+
+jobs:
+
+  devops-01-maven:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Setup jdk 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.5.0
+        with:
+          java-version: 17
+          maven-version: 3.8.6
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      #######################################
+      ######### go ##########################
+      #######################################
+
+      - name: maven package
+        run: mvn package
+        working-directory: springboot-k8s/k8s-01-frontend-backend/k8s01-backend
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: springboot-k8s/k8s-01-frontend-backend/k8s01-backend
+          push: true
+          tags: | 
+            yudady/k8s01-backend:latest
+          build-args: JAR_FILE=./target/k8s01-backend-0.0.1.jar
+
+
+      - name: maven package
+        run: mvn package
+        working-directory: springboot-k8s/k8s-01-frontend-backend/k8s01-frontend
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: springboot-k8s/k8s-01-frontend-backend/k8s01-frontend
+          push: true
+          tags: |
+            yudady/k8s01-frontend:latest
+          build-args: JAR_FILE=./target/k8s01-frontend-0.0.1.jar
+
+
+      #######################################
+      ######### slack start ################
+      #######################################
+
+      - name: slack report Status
+        uses: ravsamhq/notify-slack-action@v2
+        if: always()
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          notification_title: "{workflow} has {status_message}"
+          message_format: "{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>"
+          footer: "Linked Repo <{repo_url}|{repo}> | <{workflow_url}|View Workflow>"
+          notify_when: "success,failure,cancelled,warnings"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
