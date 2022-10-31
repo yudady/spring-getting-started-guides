@@ -63,7 +63,7 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 8000
+      port: 8080
       targetPort: 8080
 
 ---
@@ -77,7 +77,7 @@ spec:
   type: ClusterIP
   ports:
     - protocol: TCP
-      port: 8000
+      port: 8080
       targetPort: 8080
 ---
 apiVersion: networking.k8s.io/v1
@@ -96,4 +96,4 @@ spec:
               service:
                 name: svc-k8s01-frontend
                 port:
-                  number: 80
+                  number: 8080
