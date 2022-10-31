@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+
+  k8s01-frontend:
+    image: yudady/k8s01-frontend:latest
+    environment:
+      - BACKEND_URL=http://k8s01-backend:9999
+      - SERVER_PORT=8888
+    ports:
+     - "8888:8888"
+
+  k8s01-backend:
+    image: yudady/k8s01-backend:latest
+    environment:
+      - SERVER_PORT=9999
+    ports:
+      - "9999:9999"
