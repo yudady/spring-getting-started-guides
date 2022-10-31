@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <artifactId>frontend</artifactId>
+    <artifactId>k8s01-frontend</artifactId>
     <packaging>jar</packaging>
 
 </project>

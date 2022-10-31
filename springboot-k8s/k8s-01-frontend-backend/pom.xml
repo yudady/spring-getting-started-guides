@@ -22,8 +22,8 @@
 
 
     <modules>
-        <module>frontend</module>
-        <module>backend</module>
+        <module>k8s01-backend</module>
+        <module>k8s01-frontend</module>
     </modules>
 
     <dependencies>
