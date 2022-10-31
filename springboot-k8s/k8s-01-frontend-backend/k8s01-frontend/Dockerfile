@@ -15,4 +15,4 @@ EXPOSE 8080
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
 
-# $ docker build -t yudady/k8s01-backend --build-arg JAR_FILE=target/k8s01-frontend0.0.1.jar .
+# $ docker build -t yudady/k8s01-backend --build-arg JAR_FILE=target/k8s01-frontend-0.0.1.jar .
