@@ -1,4 +1,4 @@
-package web06.consumer.controller;
+package k8s01.frontend.controller;
 
 
 import java.util.Map;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import web06.consumer.model.ConsumerKey;
-import web06.consumer.model.ConsumerUser;
-import web06.consumer.service.ConsumerRestTemplateService;
+import k8s01.frontend.model.ConsumerKey;
+import k8s01.frontend.model.ConsumerUser;
+import k8s01.frontend.service.ConsumerRestTemplateService;
 
 @RestController
 public class ConsumerController {

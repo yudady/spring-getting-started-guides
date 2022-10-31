@@ -1,9 +1,9 @@
 ### 9091 -> 9094
-GET http://localhost:9001
+GET http://localhost:8080
 
 
 ###
-POST http://localhost:9001
+POST http://localhost:8080
 Content-Type: application/json
 
 {

@@ -1,11 +1,11 @@
-package web06.producer.service;
+package k8s01.backend.service;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.IntStream;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import web06.producer.model.UserServer;
+import k8s01.backend.model.UserServer;
 
 @Service
 @Slf4j

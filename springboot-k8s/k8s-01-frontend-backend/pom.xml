@@ -22,8 +22,8 @@
 
 
     <modules>
-        <module>client-rest-template</module>
-        <module>service-server</module>
+        <module>frontend</module>
+        <module>backend</module>
     </modules>
 
     <dependencies>

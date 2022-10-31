@@ -1,4 +1,4 @@
-package web06.producer.controller;
+package k8s01.backend.controller;
 
 
 import java.util.Map;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import web06.producer.model.UserServer;
-import web06.producer.service.UserService;
+import k8s01.backend.model.UserServer;
+import k8s01.backend.service.UserService;
 
 @RestController
 @Slf4j

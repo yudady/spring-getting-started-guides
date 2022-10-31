@@ -1,4 +1,4 @@
-package web06.producer.model;
+package k8s01.backend.model;
 
 public class UserServer {
 

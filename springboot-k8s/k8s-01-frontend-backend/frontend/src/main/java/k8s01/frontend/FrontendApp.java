@@ -1,13 +1,13 @@
-package web06.consumer;
+package k8s01.frontend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestTemplateApp {
+public class FrontendApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(RestTemplateApp.class, args);
+        SpringApplication.run(FrontendApp.class, args);
     }
 
 }

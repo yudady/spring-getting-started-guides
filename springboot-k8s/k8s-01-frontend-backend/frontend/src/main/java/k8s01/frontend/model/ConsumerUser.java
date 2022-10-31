@@ -1,4 +1,4 @@
-package web06.consumer.model;
+package k8s01.frontend.model;
 
 public class ConsumerUser {
 
