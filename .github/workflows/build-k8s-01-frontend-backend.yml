@@ -1,4 +1,4 @@
-name: devops-01-maven
+name: build-k8s-01-frontend-backend
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
 
 jobs:
 
-  devops-01-maven:
+  build-k8s-01-frontend-backend:
 
     runs-on: ubuntu-latest
 
