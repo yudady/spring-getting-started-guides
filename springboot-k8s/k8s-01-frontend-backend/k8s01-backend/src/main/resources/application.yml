@@ -17,4 +17,5 @@ management:
                 include: health, metrics, prometheus
     metrics:
         tags:
-            application: ${spring.application.name}
+#            application: ${spring.application.name}
+            application: k8s01-backend

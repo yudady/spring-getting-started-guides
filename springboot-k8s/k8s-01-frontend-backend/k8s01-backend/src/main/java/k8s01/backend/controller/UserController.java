@@ -20,6 +20,11 @@ public class UserController {
     @Autowired
     UserService service;
 
+    @GetMapping(value = "/")
+    public String index() {
+        return "k8s01-backend";
+    }
+
     @GetMapping(value = "/getUser")
     public ResponseEntity<Map<Integer, UserServer>> listAllUsers() {
         log.info("restemplate-producer getUser");
