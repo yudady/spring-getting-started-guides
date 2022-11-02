@@ -1,0 +1,29 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: monitor-k8s01-frontend
+  labels:
+    name: monitor-k8s01-frontend
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      name: svc-k8s01-frontend
+  endpoints:
+    - port: 8080
+      path: "/actuator/prometheus"
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: monitor-k8s01-backend
+  labels:
+    name: monitor-k8s01-backend
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      name: svc-k8s01-backend
+  endpoints:
+    - port: 8080
+      path: "/actuator/prometheus"
