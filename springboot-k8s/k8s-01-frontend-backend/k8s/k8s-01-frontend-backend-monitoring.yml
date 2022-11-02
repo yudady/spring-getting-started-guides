@@ -10,7 +10,7 @@ spec:
     matchLabels:
       name: svc-k8s01-frontend
   endpoints:
-    - port: 8080
+    - port: http-traffic
       path: "/actuator/prometheus"
 ---
 apiVersion: monitoring.coreos.com/v1
@@ -25,5 +25,5 @@ spec:
     matchLabels:
       name: svc-k8s01-backend
   endpoints:
-    - port: 8080
+    - port: http-traffic
       path: "/actuator/prometheus"

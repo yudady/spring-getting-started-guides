@@ -11,7 +11,8 @@ server:
 
 spring:
     application:
-        name: @project.artifactId@
+#        name: @project.artifactId@
+        name: k8s01-frontend
 management:
     endpoints:
         web:

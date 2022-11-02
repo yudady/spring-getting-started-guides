@@ -8,7 +8,8 @@ server:
     port: 9090
 spring:
     application:
-        name: @project.artifactId@
+#        name: @project.artifactId@
+        name: k8s01-backend
 management:
     endpoints:
         web:
