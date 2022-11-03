@@ -59,6 +59,7 @@ metadata:
   name: svc-k8s01-frontend
   labels:
     type: svc-k8s01-frontend
+    release: prometheus
 spec:
   selector:
     type: k8s01-frontend
@@ -75,6 +76,7 @@ metadata:
   name: svc-k8s01-backend
   labels:
     type: svc-k8s01-backend
+    release: prometheus
 spec:
   selector:
     type: k8s01-backend
@@ -87,9 +89,9 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ing-k8s-01-frontend-frontend
+  name: ing-k8s-01-frontend-backend
   labels:
-    type: ing-k8s-01-frontend-frontend
+    type: ing-k8s-01-frontend-backend
 spec:
   ingressClassName: nginx
   rules:

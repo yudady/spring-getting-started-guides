@@ -20,12 +20,10 @@ metadata:
     release: prometheus
   name: monitor-k8s01-backend
 spec:
-  namespaceSelector:
-    matchNames:
-      - default
   selector:
     matchLabels:
       type: svc-k8s01-backend
   endpoints:
-    - port: web
+    - port: metric-traffic
+      path: "/actuator/prometheus"
 
