@@ -8,8 +8,7 @@ server:
     port: 9090
 spring:
     application:
-#        name: @project.artifactId@
-        name: k8s01-backend
+        name: @project.artifactId@
 management:
     endpoints:
         web:
@@ -17,5 +16,4 @@ management:
                 include: health, metrics, prometheus
     metrics:
         tags:
-#            application: ${spring.application.name}
-            application: k8s01-backend
+            application: ${spring.application.name}

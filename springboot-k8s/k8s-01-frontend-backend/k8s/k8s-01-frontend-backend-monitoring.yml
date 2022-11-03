@@ -27,8 +27,5 @@ spec:
     matchLabels:
       type: svc-k8s01-backend
   endpoints:
-    - interval: 30s
-      port: http-traffic
-      scrapeTimeout: 10s
-      path: "/actuator/prometheus"
+    - port: web
 
