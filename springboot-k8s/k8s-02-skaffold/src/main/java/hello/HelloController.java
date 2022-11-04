@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
     @RequestMapping("/")
     public String index() {
-        return "Hello, World!123  dynamic deploy";
+        String msg = "Hello, World!123  dynamic deploy";
+
+        for (int i = 0; i < 10; i++) {
+            msg += "" + i;
+        }
+
+        return msg;
     }
 }
