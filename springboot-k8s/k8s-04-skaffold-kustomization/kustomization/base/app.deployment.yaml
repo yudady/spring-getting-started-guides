@@ -56,5 +56,5 @@ spec:
           - name: SPRING_PROFILES_ACTIVE
             valueFrom:
               configMapKeyRef:
-                name: hello-world-cm
+                name: k8s-04-skaffold-kustomization-cm
                 key: SPRING_PROFILES_ACTIVE

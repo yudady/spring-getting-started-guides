@@ -4,28 +4,53 @@ kind: Config
 metadata:
   name: k8s-04-skaffold-kustomization
 
+manifests:
+  kustomize:
+    paths:
+      - kustomization/base
+
+
 build:
   artifacts:
   - image: k8s-04-skaffold-kustomization
     context: .
     jib: {}
 
-deploy:
-  kustomize:
-    paths:
-    - kustomization/base
-
 profiles:
-  # Local cluster - we build and deploy things locally
-  - name: local
+  - name: gcb
     build:
-      local:
-        push: false
+      googleCloudBuild: {}
+
+
+
+
+
+#profiles:
+#  - name: local
 #    activation:
-#      - kubeContext: docker-desktop
-  # AWS EKS - does not build anything and will just push local images to remote ECR
-  - name: aws
-    deploy:
-      kustomize:
-        paths:
-          - kustomization/aws
+#      - env: local
+##      - kubeContext: minikube
+##        command: local
+#  - name: aws
+#    activation:
+#      - env: aws
+#      - kubeContext: minikube
+#        command: aws
+
+#profiles:
+#  # Local cluster - we build and deploy things locally
+#  - name: local
+#    build:
+#      local:
+#        push: false
+##    activation:
+##      - kubeContext: docker-desktop
+#  # AWS EKS - does not build anything and will just push local images to remote ECR
+#  - name: gcb
+#    deploy:
+#      kustomize:
+#        paths:
+#          - kustomization/aws
+#
+
+
