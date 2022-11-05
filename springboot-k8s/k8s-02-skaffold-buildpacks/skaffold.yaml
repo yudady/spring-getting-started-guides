@@ -2,7 +2,7 @@ apiVersion: skaffold/v3
 kind: Config
 build:
   artifacts:
-    - image: k8s-02-skaffold
+    - image: k8s-02-skaffold-buildpacks
       context: .
       buildpacks:
         env:

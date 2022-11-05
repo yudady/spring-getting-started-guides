@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.yudady</groupId>
-  <artifactId>k8s-02-skaffold</artifactId>
+  <artifactId>k8s-02-skaffold-buildpacks</artifactId>
   <version>0.1.0</version>
   <description>Spring Boot</description>
 

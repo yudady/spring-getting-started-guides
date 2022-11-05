@@ -1,0 +1,15 @@
+apiVersion: skaffold/v3
+kind: Config
+build:
+  artifacts:
+    - image: k8s-03-skaffold-jib
+      context: .
+      jib: {}
+profiles:
+  - name: gcb
+    build:
+      googleCloudBuild: {}
+
+
+
+

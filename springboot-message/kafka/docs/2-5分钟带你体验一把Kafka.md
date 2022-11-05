@@ -187,7 +187,7 @@ Created topic test.
 
 ```shell
 root@kafka1:/# kafka-console-consumer --bootstrap-server localhost:9092 --topic test
-send hello from console -producer
+send k8s02 from console -producer
 ```
 
 我们订阅了 名为 test  的 Topic。
@@ -196,17 +196,17 @@ send hello from console -producer
 
 ```shell
 root@kafka1:/# kafka-console-producer --broker-list localhost:9092 --topic test
->send hello from console -producer
+>send k8s02 from console -producer
 >
 ```
 
-我们使用 `kafka-console-producer ` 命令向名为 test  的 Topic 发送了一条消息，消息内容为：“send hello from console -producer”
+我们使用 `kafka-console-producer ` 命令向名为 test  的 Topic 发送了一条消息，消息内容为：“send k8s02 from console -producer”
 
 这个时候，你会发现消费者成功接收到了消息：
 
 ```shell
 root@kafka1:/# kafka-console-consumer --bootstrap-server localhost:9092 --topic test
-send hello from console -producer
+send k8s02 from console -producer
 ```
 
 ### IDEA相关插件推荐
@@ -342,7 +342,7 @@ public class ConsumerCreator {
 private static final String TOPIC = "test-topic";
 Producer<String, String> producer = ProducerCreator.createProducer();
 ProducerRecord<String, String> record =
-  new ProducerRecord<>(TOPIC, "hello, Kafka!");
+  new ProducerRecord<>(TOPIC, "k8s02, Kafka!");
 try {
   //send message
   RecordMetadata metadata = producer.send(record).get();
@@ -378,6 +378,6 @@ while (true) {
 
 ```j
 Record sent to partition 0 with offset 20
-Consumer consume message:hello, Kafka!
+Consumer consume message:k8s02, Kafka!
 ```
 

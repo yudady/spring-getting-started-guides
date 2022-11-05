@@ -11,7 +11,7 @@
     <groupId>com.atguigu</groupId>
     <artifactId>boot-09-hello-test</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>boot-09-hello-test</name>
+    <name>boot-09-k8s02-test</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

@@ -54,24 +54,24 @@
                   <div class='indent'>SpringApplication.run(DemoApplication.class, args);<br/></div>
                   }<br/>
                   <br/>
-                  @GetMapping("/hello")<br/>
-                  public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {<br/>
+                  @GetMapping("/k8s02")<br/>
+                  public String k8s02(@RequestParam(value = "name", defaultValue = "World") String name) {<br/>
                   <div class='indent'>return String.format("Hello %s!", name);<br/></div>
                   }<br/>
                 </div>
               }<br/>
             </code></pre>
                 <p class='caption'>This is all the code required to create a simple “Hello World” web service in Spring Boot.</p>
-                <p>The <code class='no-bg'>hello()</code> method we’ve added is designed to take a String parameter called <code>name</code>, and then combine this parameter with the word <code>"Hello"</code> in the code. This means that if you set your name to <code>“Amy”</code> in the request, the response would be <code>“Hello Amy”</code>.</p>
-                <p class='mb-4'>The <code>@RestController</code> annotation tells Spring that this code describes an endpoint that should be made available over the web. The <code>@GetMapping(“/hello”)</code> tells Spring to use our <code class='no-bg'>hello()</code> method to answer requests that get sent to the <code>http://localhost:8080/hello</code> address. Finally, the <code>@RequestParam</code> is telling Spring to expect a <code class='no-bg'>name</code> value in the request, but if it’s not there, it will use the word “World” by default.</p>
+                <p>The <code class='no-bg'>k8s02()</code> method we’ve added is designed to take a String parameter called <code>name</code>, and then combine this parameter with the word <code>"Hello"</code> in the code. This means that if you set your name to <code>“Amy”</code> in the request, the response would be <code>“Hello Amy”</code>.</p>
+                <p class='mb-4'>The <code>@RestController</code> annotation tells Spring that this code describes an endpoint that should be made available over the web. The <code>@GetMapping(“/k8s02”)</code> tells Spring to use our <code class='no-bg'>k8s02()</code> method to answer requests that get sent to the <code>http://localhost:8080/k8s02</code> address. Finally, the <code>@RequestParam</code> is telling Spring to expect a <code class='no-bg'>name</code> value in the request, but if it’s not there, it will use the word “World” by default.</p>
                 <h2 class='h2 antialiased'><span class='green'>Step 3: </span>Try it</h2>
                 <p>Let’s build and run the program. Open a command line (or terminal) and navigate to the folder where you have the project files. We can build and run the application by issuing the following command:</p>
                 <p><b>MacOS/Linux:</b><br><pre><code class='inline-block'>./mvnw spring-boot:run</code></pre></p>
                 <p><b>Windows:</b><br><pre><code class='inline-block'>mvnw spring-boot:run</code></pre></p>
                 <p>You should see some output that looks very similar to this:</p>
                 <img alt='The terminal outputting various log statements as our Spring Boot application starts up.' title='The terminal outputting various log statements as our Spring Boot application starts up.' data-th-src="@{/images/quick-img2.png}">
-                <p class='mb-3'>The last couple of lines here tell us that Spring has started. Spring Boot’s embedded Apache Tomcat server is acting as a webserver and is listening for requests on <code class='no-bg'>localhost</code> port <code class='no-bg'>8080</code>. Open your browser and in the address bar at the top enter <a class='blue link-animate' href='http://localhost:8080/hello'>http://localhost:8080/hello</a>. You should get a nice friendly response like this:</p>
-                <img class='shadow mb-3' alt='The browser screen displaying the default ‘hello world’ output from our application.' title='The browser screen displaying the default ‘hello world’ output from our application.' data-th-src="@{/images/quick-img3.png}">
+                <p class='mb-3'>The last couple of lines here tell us that Spring has started. Spring Boot’s embedded Apache Tomcat server is acting as a webserver and is listening for requests on <code class='no-bg'>localhost</code> port <code class='no-bg'>8080</code>. Open your browser and in the address bar at the top enter <a class='blue link-animate' href='http://localhost:8080/hello'>http://localhost:8080/k8s02</a>. You should get a nice friendly response like this:</p>
+                <img class='shadow mb-3' alt='The browser screen displaying the default ‘k8s02 world’ output from our application.' title='The browser screen displaying the default ‘k8s02 world’ output from our application.' data-th-src="@{/images/quick-img3.png}">
                 <img id='pop-quiz' class='inline-block' data-th-src="@{/images/pop-quiz.svg}">
                 <h3 class='h3 antialiased inline-block m-0'>Pop quiz</h3>
                 <p>What should happen if you add <code>?name=Amy</code> to the end of the URL?</p>

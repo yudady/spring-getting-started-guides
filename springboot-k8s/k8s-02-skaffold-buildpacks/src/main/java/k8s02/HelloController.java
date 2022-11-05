@@ -1,4 +1,4 @@
-package hello;
+package k8s02;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;

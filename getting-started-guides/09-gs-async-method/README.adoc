@@ -166,13 +166,13 @@ The following listing shows typical output from this sample application:
 
 ====
 ----
-2016-09-01 10:25:21.295  INFO 17893 --- [ GithubLookup-2] hello.GitHubLookupService                : Looking up CloudFoundry
-2016-09-01 10:25:21.295  INFO 17893 --- [ GithubLookup-1] hello.GitHubLookupService                : Looking up PivotalSoftware
-2016-09-01 10:25:23.142  INFO 17893 --- [ GithubLookup-1] hello.GitHubLookupService                : Looking up Spring-Projects
-2016-09-01 10:25:24.281  INFO 17893 --- [           main] hello.AppRunner                          : Elapsed time: 2994
-2016-09-01 10:25:24.282  INFO 17893 --- [           main] hello.AppRunner                          : --> User [name=Pivotal Software, Inc., blog=https://pivotal.io]
-2016-09-01 10:25:24.282  INFO 17893 --- [           main] hello.AppRunner                          : --> User [name=Cloud Foundry, blog=https://www.cloudfoundry.org/]
-2016-09-01 10:25:24.282  INFO 17893 --- [           main] hello.AppRunner                          : --> User [name=Spring, blog=https://spring.io/projects]
+2016-09-01 10:25:21.295  INFO 17893 --- [ GithubLookup-2] k8s02.GitHubLookupService                : Looking up CloudFoundry
+2016-09-01 10:25:21.295  INFO 17893 --- [ GithubLookup-1] k8s02.GitHubLookupService                : Looking up PivotalSoftware
+2016-09-01 10:25:23.142  INFO 17893 --- [ GithubLookup-1] k8s02.GitHubLookupService                : Looking up Spring-Projects
+2016-09-01 10:25:24.281  INFO 17893 --- [           main] k8s02.AppRunner                          : Elapsed time: 2994
+2016-09-01 10:25:24.282  INFO 17893 --- [           main] k8s02.AppRunner                          : --> User [name=Pivotal Software, Inc., blog=https://pivotal.io]
+2016-09-01 10:25:24.282  INFO 17893 --- [           main] k8s02.AppRunner                          : --> User [name=Cloud Foundry, blog=https://www.cloudfoundry.org/]
+2016-09-01 10:25:24.282  INFO 17893 --- [           main] k8s02.AppRunner                          : --> User [name=Spring, blog=https://spring.io/projects]
 ----
 ====
 

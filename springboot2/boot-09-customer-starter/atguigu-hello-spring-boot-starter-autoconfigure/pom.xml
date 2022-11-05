@@ -11,7 +11,7 @@
     <groupId>com.atguigu</groupId>
     <artifactId>atguigu-hello-spring-boot-starter-autoconfigure</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>atguigu-hello-spring-boot-starter-autoconfigure</name>
+    <name>atguigu-k8s02-spring-boot-starter-autoconfigure</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
