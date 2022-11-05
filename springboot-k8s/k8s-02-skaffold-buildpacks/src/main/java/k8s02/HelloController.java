@@ -9,7 +9,7 @@ public class HelloController {
     public String index() {
         String msg = "Hello, World!123  dynamic deploy";
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 11; i++) {
             msg += "" + i;
         }
 

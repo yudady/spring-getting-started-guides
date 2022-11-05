@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: k8s-02-skaffold
+        image: k8s-02-skaffold-buildpacks
         ports:
           - containerPort: 8080
