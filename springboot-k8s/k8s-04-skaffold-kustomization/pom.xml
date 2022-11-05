@@ -20,7 +20,7 @@
         <java.version>11</java.version>
         <!-- TODO Passing an Argument to Maven : mvn clean package '-Ddocker.hub.token'=docker_token  -->
         <!--  <docker.image.token>${docker.hub.token}</docker.image.token> -->
-        <docker.image.token>dckr_pat_lNSn06VPy91fYNrMqGVi3BoE6zA</docker.image.token>
+        <docker.image.token>124</docker.image.token>
     </properties>
 
     <dependencies>
@@ -80,7 +80,21 @@
                             <password>${docker.image.token}</password>
                         </auth>
                     </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Xms64m</jvmFlag>
+                            <jvmFlag>-Xmx128m</jvmFlag>
+                        </jvmFlags>
+                    </container>
                 </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

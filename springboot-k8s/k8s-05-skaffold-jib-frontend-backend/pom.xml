@@ -17,6 +17,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- TODO Passing an Argument to Maven : mvn clean package '-Ddocker.hub.token'=docker_token  -->
+        <!--  <docker.image.token>${docker.hub.token}</docker.image.token> -->
+        <docker.image.token>123</docker.image.token>
     </properties>
 
 
@@ -80,8 +83,38 @@
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
                 <version>3.3.1</version>
-
+                <configuration>
+                    <from>
+                        <image>openjdk:latest</image>
+                        <auth>
+                            <username>yudady</username>
+                            <password>${docker.image.token}</password>
+                        </auth>
+                    </from>
+                    <to>
+                        <image>yudady/${project.artifactId}:${project.version}</image>
+                        <auth>
+                            <username>yudady</username>
+                            <password>${docker.image.token}</password>
+                        </auth>
+                    </to>
+                    <container>
+                        <jvmFlags>
+                            <jvmFlag>-Xms64m</jvmFlag>
+                            <jvmFlag>-Xmx128m</jvmFlag>
+                        </jvmFlags>
+                    </container>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
         </plugins>
     </build>
 

@@ -40,14 +40,13 @@
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
 
-<!--   TODO         registry-1.docker.io/library/eclipse-temurin: 401 Unauthorized -->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.1</version>
 
-
+            </plugin>
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
@@ -69,8 +68,8 @@
                     </to>
                     <container>
                         <jvmFlags>
-                            <jvmFlag>-Xms512m</jvmFlag>
-                            <jvmFlag>-Xmx512m</jvmFlag>
+                            <jvmFlag>-Xms64m</jvmFlag>
+                            <jvmFlag>-Xmx128m</jvmFlag>
                         </jvmFlags>
                     </container>
                 </configuration>
@@ -83,7 +82,6 @@
                     </execution>
                 </executions>
             </plugin>
-
 
         </plugins>
     </build>
