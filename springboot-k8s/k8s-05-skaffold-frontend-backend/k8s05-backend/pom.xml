@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.yudady</groupId>
+    <artifactId>k8s05-backend</artifactId>
+    <version>0.0.1</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <!-- TODO Passing an Argument to Maven : mvn clean package '-Ddocker.hub.token'=docker_token  -->
+        <!--  <docker.image.token>${docker.hub.token}</docker.image.token> -->
+        <docker.image.token>dckr_pat_lNSn06VPy91fYNrMqGVi3BoE6zA</docker.image.token>
+    </properties>
+
+    <parent>
+        <groupId>io.github.yudady</groupId>
+        <artifactId>k8s-05-skaffold-frontend-backend</artifactId>
+        <version>0.0.1</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SnakeYAML 1.32 addresses CVE-2022-25857 and CVE-2022-38752 -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>1.32</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:latest</image>
+                        <auth>
+                            <username>yudady</username>
+                            <password>${docker.image.token}</password>
+                        </auth>
+                    </from>
+                    <to>
+                        <image>yudady/${project.artifactId}:${project.version}</image>
+                        <auth>
+                            <username>yudady</username>
+                            <password>${docker.image.token}</password>
+                        </auth>
+                    </to>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+
+
+
+</project>

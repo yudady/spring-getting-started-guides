@@ -1,0 +1,14 @@
+### 8888 -> 9999
+GET http://localhost:8888
+
+
+###
+POST http://localhost:8888
+Content-Type: application/json
+
+{
+  "key": 8456
+}
+
+###
+

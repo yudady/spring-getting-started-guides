@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>io.github.yudady</groupId>
-    <artifactId>k8s-01-frontend-backend</artifactId>
+    <artifactId>k8s-05-skaffold-frontend-backend</artifactId>
     <version>0.0.1</version>
 
     <packaging>pom</packaging>
@@ -22,8 +22,8 @@
 
 
     <modules>
-        <module>k8s01-backend</module>
-        <module>k8s01-frontend</module>
+        <module>k8s05-backend</module>
+        <module>k8s05-frontend</module>
     </modules>
 
     <dependencies>
@@ -49,6 +49,7 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
