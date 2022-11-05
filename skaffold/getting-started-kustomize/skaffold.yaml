@@ -17,7 +17,7 @@ build:
 manifests:
   kustomize:
     paths:
-    - overlays/staging
+    - k8s/overlays/base
 
 
 deploy:
@@ -29,9 +29,9 @@ profiles:
   manifests:
     kustomize:
       paths:
-      - overlays/prod
+      - k8s/overlays/prod
 - name: dev
   manifests:
     kustomize:
       paths:
-      - overlays/dev
+      - k8s/overlays/dev

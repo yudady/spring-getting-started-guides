@@ -3,4 +3,6 @@ kind: Deployment
 metadata:
   name: skaffold-kustomize
   labels:
-    env: dev
+    env: base
+spec:
+  replicas: 1
