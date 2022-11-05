@@ -10,14 +10,13 @@
     </parent>
 
     <groupId>io.github.yudady</groupId>
-    <artifactId>k8s-05-skaffold-frontend-backend</artifactId>
+    <artifactId>k8s-05-skaffold-jib-frontend-backend</artifactId>
     <version>0.0.1</version>
 
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>17</java.version>
     </properties>
 
 
@@ -25,6 +24,19 @@
         <module>k8s05-backend</module>
         <module>k8s05-frontend</module>
     </modules>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- SnakeYAML 1.32 addresses CVE-2022-25857 and CVE-2022-38752 -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>1.32</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
     <dependencies>
         <dependency>
@@ -52,13 +64,26 @@
 
     </dependencies>
 
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.1</version>
+
+            </plugin>
         </plugins>
     </build>
+
 
 </project>
