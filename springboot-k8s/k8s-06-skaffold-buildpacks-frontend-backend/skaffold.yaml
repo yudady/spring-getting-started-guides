@@ -1,0 +1,43 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: k8s-06-skaffold-buildpacks-frontend-backend
+build:
+  artifacts:
+  - image: k8s06-backend
+    context: k8s06-backend
+    buildpacks:
+      builder: gcr.io/buildpacks/builder:v1
+      env:
+        - GOOGLE_RUNTIME_VERSION=17
+  - image: k8s06-frontend
+    context: k8s06-frontend
+    buildpacks:
+      builder: gcr.io/buildpacks/builder:v1
+      env:
+        - GOOGLE_RUNTIME_VERSION=17
+  local:
+    push: false
+
+profiles:
+  - name: gcb
+    build:
+      googleCloudBuild: {}
+
+manifests:
+  rawYaml:
+  - k8s/backend.yml
+  - k8s/frontend.yml
+
+
+portForward:
+  - resourceType: service
+    resourceName: scv-frontend
+    namespace: default
+    port: 8080
+    localPort: 8080 # *Optional*
+  - resourceType: service
+    resourceName: scv-backend
+    namespace: default
+    port: 8080
+    localPort: 9999 # *Optional*
