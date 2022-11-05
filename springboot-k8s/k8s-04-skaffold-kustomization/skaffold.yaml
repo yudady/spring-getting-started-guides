@@ -13,17 +13,22 @@ build:
 manifests:
   kustomize:
     paths:
-      - k8s/overlays/dev
+      - k8s/overlays/base
 
 
 deploy:
   kubectl: {}
 
 profiles:
+  - name: dev
+    manifests:
+      kustomize:
+        paths:
+          - k8s/overlays/dev
   - name: prod
     manifests:
       kustomize:
         paths:
-          - overlays/prod
+          - k8s/overlays/prod
 
 
