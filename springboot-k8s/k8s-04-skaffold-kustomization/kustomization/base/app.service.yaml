@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8s-04-skaffold-kustomization-svc
+spec:
+  selector:
+    app: k8s-04-skaffold-kustomization
+  ports:
+  - protocol: "TCP"
+    port: 8080
+    targetPort: 8080
+  type: NodePort
