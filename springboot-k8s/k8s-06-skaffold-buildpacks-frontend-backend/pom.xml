@@ -17,7 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <docker.image.token>dckr_pat_lNSn06VPy91fYNrMqGVi3BoE6zA</docker.image.token>
+        <docker.image.token>123</docker.image.token>
     </properties>
 
 
