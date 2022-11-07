@@ -1,12 +1,12 @@
 name: Repository Dispatch
 on:
   repository_dispatch:
-    types: [my-event]
+    types: [on-demand-test]
 jobs:
   myEvent:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
+          ref: ${{ github.event.client_payload.unit }}
+      - run: echo ${{ github.event.client_payload.integration }}
