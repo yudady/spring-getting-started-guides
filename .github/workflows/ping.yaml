@@ -1,0 +1,16 @@
+name: Ping
+env:
+  REPO_OWNER: yudady
+  REPO_NAME: spring-getting-started-guides
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+on:
+  repository_dispatch:
+    types: [run-ping]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.unit }}
+      - run: echo ${{ github.event.client_payload.integration }}
