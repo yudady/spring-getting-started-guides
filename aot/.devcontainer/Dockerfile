@@ -6,6 +6,7 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu
 RUN set -ex; \ 
     apt-get update; \
     apt-get install -y sudo; \
+    apt-get install -y zlib1g-dev; \
     apt-get install -y  --no-install-recommends \
     #        apt-utils dialog 
     zip \
