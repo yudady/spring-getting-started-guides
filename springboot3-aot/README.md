@@ -5,6 +5,8 @@ https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
 https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/
 https://docs.spring.io/spring-boot/docs/current/gradle-plugin/reference/htmlsingle/
 
+https://github.com/spring-tips/spring-boot-3-aot
+https://www.youtube.com/watch?v=TOfYlLjXufw
 ```shell
 
 apt-get install gcc g++
