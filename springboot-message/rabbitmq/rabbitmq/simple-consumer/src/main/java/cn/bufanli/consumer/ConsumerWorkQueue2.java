@@ -46,7 +46,7 @@ public class ConsumerWorkQueue2 {
          * boolean autoAck, 是否自動確認
          * Consumer callback 回調對象
          */
-        DefaultConsumer defaultConsumer = new DefaultConsumer(channel) {
+        channel.basicConsume("work-queues", false, new DefaultConsumer(channel) {
             /**
              * 回調方法，當收到消息後會自動執行該方法
              * @param consumerTag  消費者標簽
@@ -62,10 +62,10 @@ public class ConsumerWorkQueue2 {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-//                log.info("body:" + new String(body));
+                log.info("body:" + new String(body));
+                channel.basicAck(envelope.getDeliveryTag(), false);
             }
-        };
-        channel.basicConsume("work-queues", true, defaultConsumer);
+        });
         //7.釋放資源 不需要
         /*channel.close();
         connection.close();*/

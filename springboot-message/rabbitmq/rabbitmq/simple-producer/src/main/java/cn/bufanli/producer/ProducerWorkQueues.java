@@ -9,12 +9,14 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * 發送消息
+ *
  * @author yd
  * @version 1.0
  * @date 2020/12/4 16:23
  */
 public class ProducerWorkQueues {
     public static void main(String[] args) throws IOException, TimeoutException {
+        System.out.println("ProducerWorkQueues start ");
         //1.創建連接工廠
         ConnectionFactory connectionFactory = new ConnectionFactory();
         //2.設置參數
@@ -40,7 +42,7 @@ public class ProducerWorkQueues {
          * boolean autoDelete, 是否自動刪除，當沒有消費者
          * Map<String, Object> arguments 參數信息
          */
-        channel.queueDeclare("work-queues",true,false,false,null);
+        channel.queueDeclare("work-queues", true, false, false, null);
         //6.發送消息
         /**
          * String exchange, 交換機名稱簡單模式下交換機會使用默認的
@@ -48,12 +50,13 @@ public class ProducerWorkQueues {
          * BasicProperties props, 配值信息
          * byte[] body 真實發送的消息數據
          */
-        for (int i = 0; i < 40; i++) {
-            String body  = i+ ":Hello rabbitMq -- work-queues";
-            channel.basicPublish("","work-queues",null,body.getBytes());
+        for (int i = 0; i < 20; i++) {
+            String body = i + ":Hello rabbitMq -- work-queues";
+            channel.basicPublish("", "work-queues", null, body.getBytes());
         }
         //7.釋放資源
         channel.close();
         connection.close();
+        System.out.println("ProducerWorkQueues done ");
     }
 }
