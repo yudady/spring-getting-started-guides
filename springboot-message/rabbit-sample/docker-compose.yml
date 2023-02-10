@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+# localhost:15672
+# Use guest/guest as username and password.
