@@ -1,17 +1,16 @@
 package cn.bufanli.consumer;
 
 import com.rabbitmq.client.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/**
- * @author yd
- * @version 1.0
- * @date 2020/12/4 16:49
- */
+@Slf4j(topic = "consumer")
 public class ConsumerWorkQueue2 {
     public static void main(String[] args) throws IOException, TimeoutException {
+        log.debug("[LOG]======== ConsumerWorkQueue2 ========");
         //1.創建連接工廠
         ConnectionFactory connectionFactory = new ConnectionFactory();
         //2.設置參數
@@ -37,14 +36,17 @@ public class ConsumerWorkQueue2 {
          * boolean autoDelete, 是否自動刪除，當沒有消費者
          * Map<String, Object> arguments 參數信息
          */
-        channel.queueDeclare("work-queues",true,false,false,null);
+        channel.queueDeclare("work-queues", true, false, false, null);
+
+        channel.basicQos(1);
+
         //6.接收消息
         /**
          * String queue, 隊列名稱
          * boolean autoAck, 是否自動確認
          * Consumer callback 回調對象
          */
-        DefaultConsumer defaultConsumer = new DefaultConsumer(channel){
+        DefaultConsumer defaultConsumer = new DefaultConsumer(channel) {
             /**
              * 回調方法，當收到消息後會自動執行該方法
              * @param consumerTag  消費者標簽
@@ -55,10 +57,15 @@ public class ConsumerWorkQueue2 {
              */
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
-                System.out.println("body:"+new String(body));
+                try {
+                    TimeUnit.SECONDS.sleep(2L);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+//                log.info("body:" + new String(body));
             }
         };
-        channel.basicConsume("work-queues",true, defaultConsumer);
+        channel.basicConsume("work-queues", true, defaultConsumer);
         //7.釋放資源 不需要
         /*channel.close();
         connection.close();*/
