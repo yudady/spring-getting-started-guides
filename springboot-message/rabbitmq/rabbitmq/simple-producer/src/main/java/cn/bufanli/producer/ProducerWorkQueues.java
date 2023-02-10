@@ -3,19 +3,15 @@ package cn.bufanli.producer;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-/**
- * 發送消息
- *
- * @author yd
- * @version 1.0
- * @date 2020/12/4 16:23
- */
+@Slf4j
 public class ProducerWorkQueues {
     public static void main(String[] args) throws IOException, TimeoutException {
+        log.info("=== ProducerWorkQueues ===");
         System.out.println("ProducerWorkQueues start ");
         //1.創建連接工廠
         ConnectionFactory connectionFactory = new ConnectionFactory();
@@ -50,7 +46,7 @@ public class ProducerWorkQueues {
          * BasicProperties props, 配值信息
          * byte[] body 真實發送的消息數據
          */
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 2; i++) {
             String body = i + ":Hello rabbitMq -- work-queues";
             channel.basicPublish("", "work-queues", null, body.getBytes());
         }
