@@ -8,3 +8,6 @@
 .DS_Store
 **/.gradle/
 **/build/
+**/target/
+**/**.iml
+**/data/
