@@ -43,6 +43,20 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.tronprotocol</groupId>
+            <artifactId>wallet-cli</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/wallet-cli.jar</systemPath>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.16.1</version>
+        </dependency>
+
 
     </dependencies>
 
